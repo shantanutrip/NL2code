@@ -599,7 +599,7 @@ def check_terminals():
 
 def query_to_data(query, annot_vocab):
     query_tokens = query.split(' ')
-    token_num = min(config.max_qeury_length, len(query_tokens))
+    token_num = min(config.max_query_length, len(query_tokens))
     data = np.zeros((1, token_num), dtype='int32')
 
     for tid, token in enumerate(query_tokens[:token_num]):

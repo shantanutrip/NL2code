@@ -1,0 +1,91 @@
+------------------------------------------------------------
+example_id: 599
+class Archmage(MinionCard):
+
+    def __init__(self):
+        super().__init__('Archmage', 6, CHARACTER_CLASS.ALL, CARD_RARITY.COMMON
+            )
+
+    def create_minion(self, player):
+        return Minion(4, 7, spell_damage=1)
+------------------------------------------------------------
+------------------------------------------------------------
+example_id: 609
+class SearingTotem(MinionCard):
+
+    def __init__(self):
+        super().__init__('Searing Totem', 1, CHARACTER_CLASS.SHAMAN,
+            CARD_RARITY.FREE, False, MINION_TYPE.TOTEM)
+
+    def create_minion(self, player):
+        return Minion(1, 1)
+------------------------------------------------------------
+------------------------------------------------------------
+example_id: 610
+class SilverbackPatriarch(MinionCard):
+
+    def __init__(self):
+        super().__init__('Silverback Patriarch', 3, CHARACTER_CLASS.ALL,
+            CARD_RARITY.COMMON, minion_type=MINION_TYPE.BEAST)
+
+    def create_minion(self, player):
+        return Minion(1, 4, taunt=True)
+------------------------------------------------------------
+------------------------------------------------------------
+example_id: 611
+class StormwindKnight(MinionCard):
+
+    def __init__(self):
+        super().__init__('Stormwind Knight', 4, CHARACTER_CLASS.ALL,
+            CARD_RARITY.COMMON)
+
+    def create_minion(self, player):
+        return Minion(2, 5, charge=True)
+------------------------------------------------------------
+------------------------------------------------------------
+example_id: 612
+class VoodooDoctor(MinionCard):
+
+    def __init__(self):
+        super().__init__('Voodoo Doctor', 1, CHARACTER_CLASS.ALL,
+            CARD_RARITY.FREE, battlecry=Battlecry(Heal(2),
+            CharacterSelector(players=BothPlayer(), picker=UserPicker())))
+
+    def create_minion(self, player):
+        return Minion(2, 1)
+------------------------------------------------------------
+------------------------------------------------------------
+example_id: 613
+class WrathOfAirTotem(MinionCard):
+
+    def __init__(self):
+        super().__init__('Wrath of Air Totem', 1, CHARACTER_CLASS.SHAMAN,
+            CARD_RARITY.FREE, False, MINION_TYPE.TOTEM)
+
+    def create_minion(self, player):
+        return Minion(0, 2, spell_damage=1)
+------------------------------------------------------------
+------------------------------------------------------------
+example_id: 630
+class Maexxna(MinionCard):
+
+    def __init__(self):
+        super().__init__('Maexxna', 6, CHARACTER_CLASS.ALL, CARD_RARITY.
+            LEGENDARY, minion_type=MINION_TYPE.BEAST)
+
+    def create_minion(self, player):
+        return Minion(2, 8, effects=[Effect(DidDamage(), ActionTag(Kill(),
+            TargetSelector(IsMinion())))])
+------------------------------------------------------------
+------------------------------------------------------------
+example_id: 658
+class ThrallmarFarseer(MinionCard):
+
+    def __init__(self):
+        super().__init__('Thrallmar Farseer', 3, CHARACTER_CLASS.ALL,
+            CARD_RARITY.COMMON)
+
+    def create_minion(self, player):
+        return Minion(2, 3, windfury=True)
+------------------------------------------------------------
+599, 609, 610, 611, 612, 613, 630, 658
