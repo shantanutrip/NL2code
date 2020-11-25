@@ -1,0 +1,1465 @@
+Google Colab running
+batch size : 10
+max epoch size : 10
+training hs dataset
+/usr/local/lib/python2.7/dist-packages/theano/gpuarray/dnn.py:184: UserWarning: Your cuDNN version is more recent than Theano. If you encounter problems, try updating Theano or downgrading cuDNN to a version >= v5 and <= v7.
+  warnings.warn("Your cuDNN version is more recent than "
+Using cuDNN version 7605 on context None
+Mapped name None to device cuda0: Tesla T4 (0000:00:04.0)
+11/21/2020 20:04:13 [INFO] generic_utils: init logging file [runs/parser.log]
+11/21/2020 20:04:13 [INFO] code_gen: command line: code_gen.py -data_type hs -data data/hs.freq3.pre_suf.unary_closure.bin -output_dir runs -batch_size 10 -max_epoch 200 -valid_per_batch 280 -save_per_batch 280 -decode_max_time_step 350 -optimizer adadelta -rule_embed_dim 128 -node_embed_dim 64 -valid_metric bleu train
+11/21/2020 20:04:13 [INFO] code_gen: loading dataset [data/hs.freq3.pre_suf.unary_closure.bin]
+11/21/2020 20:04:15 [INFO] code_gen: current config: Namespace(attention_hidden_dim=50, batch_size=10, beam_size=15, clip_grad=0.0, data='data/hs.freq3.pre_suf.unary_closure.bin', data_type='hs', decode_max_time_step=350, decoder_hidden_dim=256, dropout=0.2, enable_copy=True, encoder='bilstm', encoder_hidden_dim=256, frontier_node_type_feed=True, head_nt_constraint=True, ifttt_test_split='data/ifff.test_data.gold.id', max_epoch=200, max_query_length=70, model=None, node_embed_dim=64, node_num=57, operation='train', optimizer='adadelta', output_dir='runs', parent_action_feed=True, parent_hidden_state_feed=True, ptrnet_hidden_dim=50, random_seed=181783, rule_embed_dim=128, rule_num=100, save_per_batch=280, source_vocab_size=351, target_vocab_size=556, train_patience=10, tree_attention=False, valid_metric='bleu', valid_per_batch=280, word_embed_dim=128)
+11/21/2020 20:04:15 [INFO] code_gen: avg_action_num: 141
+11/21/2020 20:04:15 [INFO] code_gen: grammar rule num.: 100
+11/21/2020 20:04:15 [INFO] code_gen: grammar node type num.: 57
+11/21/2020 20:04:15 [INFO] code_gen: source vocab size: 351
+11/21/2020 20:04:15 [INFO] code_gen: target vocab size: 556
+11/21/2020 20:04:15 [INFO] recurrent: applying dropout with p = 0.200000
+11/21/2020 20:04:17 [INFO] recurrent: applying dropout with p = 0.200000
+11/21/2020 20:04:17 [INFO] components: applying dropout with p = 0.200000
+/usr/local/lib/python2.7/dist-packages/theano/gradient.py:589: UserWarning: grad method was asked to compute the gradient with respect to a variable that is not part of the computational graph of the cost, or is used only by a non-differentiable operator: decoder_lstm_p4
+  handle_disconnected(elem)
+/usr/local/lib/python2.7/dist-packages/theano/gradient.py:589: UserWarning: grad method was asked to compute the gradient with respect to a variable that is not part of the computational graph of the cost, or is used only by a non-differentiable operator: decoder_lstm_p10
+  handle_disconnected(elem)
+/usr/local/lib/python2.7/dist-packages/theano/gradient.py:589: UserWarning: grad method was asked to compute the gradient with respect to a variable that is not part of the computational graph of the cost, or is used only by a non-differentiable operator: decoder_lstm_p16
+  handle_disconnected(elem)
+/usr/local/lib/python2.7/dist-packages/theano/gradient.py:589: UserWarning: grad method was asked to compute the gradient with respect to a variable that is not part of the computational graph of the cost, or is used only by a non-differentiable operator: decoder_lstm_p22
+  handle_disconnected(elem)
+/usr/local/lib/python2.7/dist-packages/theano/gradient.py:589: UserWarning: grad method was asked to compute the gradient with respect to a variable that is not part of the computational graph of the cost, or is used only by a non-differentiable operator: decoder_lstm_p29
+  handle_disconnected(elem)
+/usr/local/lib/python2.7/dist-packages/theano/gradient.py:589: UserWarning: grad method was asked to compute the gradient with respect to a variable that is not part of the computational graph of the cost, or is used only by a non-differentiable operator: decoder_lstm_p30
+  handle_disconnected(elem)
+/usr/local/lib/python2.7/dist-packages/theano/gradient.py:589: UserWarning: grad method was asked to compute the gradient with respect to a variable that is not part of the computational graph of the cost, or is used only by a non-differentiable operator: decoder_lstm_p31
+  handle_disconnected(elem)
+/usr/local/lib/python2.7/dist-packages/theano/gradient.py:589: UserWarning: grad method was asked to compute the gradient with respect to a variable that is not part of the computational graph of the cost, or is used only by a non-differentiable operator: decoder_lstm_p32
+  handle_disconnected(elem)
+/usr/local/lib/python2.7/dist-packages/theano/gradient.py:589: UserWarning: grad method was asked to compute the gradient with respect to a variable that is not part of the computational graph of the cost, or is used only by a non-differentiable operator: decoder_lstm_p33
+  handle_disconnected(elem)
+/usr/local/lib/python2.7/dist-packages/theano/gradient.py:615: UserWarning: grad method was asked to compute the gradient with respect to a variable that is not part of the computational graph of the cost, or is used only by a non-differentiable operator: <DisconnectedType>
+  handle_disconnected(rval[i])
+11/21/2020 20:08:45 [INFO] model: building decoder ...
+11/21/2020 20:08:45 [INFO] recurrent: applying dropout with p = 0.200000
+11/21/2020 20:08:45 [INFO] recurrent: applying dropout with p = 0.200000
+11/21/2020 20:08:46 [INFO] components: applying dropout with p = 0.200000
+11/21/2020 20:09:07 [INFO] learner: initial learner with training set [hs.train_data] (533 examples)
+11/21/2020 20:09:07 [INFO] learner: validation set [hs.dev_data] (66 examples)
+11/21/2020 20:09:07 [INFO] learner: begin training
+Epoch 0, eta 58s
+11/21/2020 20:10:00 [INFO] learner: [Epoch 0] cumulative loss = 390.270251, (took 53s)
+Epoch 1, eta 43s
+11/21/2020 20:10:52 [INFO] learner: [Epoch 1] cumulative loss = 146.870589, (took 51s)
+Epoch 2, eta 53s
+11/21/2020 20:11:45 [INFO] learner: [Epoch 2] cumulative loss = 89.593231, (took 53s)
+Epoch 3, eta 44s
+11/21/2020 20:12:37 [INFO] learner: [Epoch 3] cumulative loss = 71.750251, (took 52s)
+Epoch 4, eta 50s
+11/21/2020 20:13:31 [INFO] learner: [Epoch 4] cumulative loss = 63.047884, (took 53s)
+Epoch 5, eta 60s
+11/21/2020 20:13:41 [INFO] learner: begin validation
+11/21/2020 20:15:45 [INFO] evaluation: corpus level bleu: 0.486613
+11/21/2020 20:15:45 [INFO] evaluation: sentence level bleu: 0.523786
+11/21/2020 20:15:45 [INFO] evaluation: accuracy: 0.015152
+11/21/2020 20:15:45 [INFO] evaluation: oracle bleu: 0.625382
+11/21/2020 20:15:45 [INFO] evaluation: oracle accuracy: 0.015152
+11/21/2020 20:15:45 [INFO] learner: avg. example bleu: 0.523786
+11/21/2020 20:15:45 [INFO] learner: accuracy: 0.015152
+11/21/2020 20:15:45 [INFO] learner: save current best model
+11/21/2020 20:15:45 [INFO] model: save model to [runs/model.npz]
+11/21/2020 20:15:45 [INFO] model: save model to [runs/model.iter280]
+11/21/2020 20:16:29 [INFO] learner: [Epoch 5] cumulative loss = 57.975783, (took 177s)
+Epoch 6, eta 65s
+11/21/2020 20:17:23 [INFO] learner: [Epoch 6] cumulative loss = 52.420582, (took 53s)
+Epoch 7, eta 46s
+11/21/2020 20:18:16 [INFO] learner: [Epoch 7] cumulative loss = 46.960231, (took 52s)
+Epoch 8, eta 43s
+11/21/2020 20:19:06 [INFO] learner: [Epoch 8] cumulative loss = 42.561965, (took 50s)
+Epoch 9, eta 60s
+11/21/2020 20:19:57 [INFO] learner: [Epoch 9] cumulative loss = 39.645158, (took 51s)
+Epoch 10, eta 60s
+11/21/2020 20:20:15 [INFO] learner: begin validation
+11/21/2020 20:22:07 [INFO] evaluation: corpus level bleu: 0.581944
+11/21/2020 20:22:07 [INFO] evaluation: sentence level bleu: 0.609326
+11/21/2020 20:22:07 [INFO] evaluation: accuracy: 0.000000
+11/21/2020 20:22:07 [INFO] evaluation: oracle bleu: 0.659285
+11/21/2020 20:22:07 [INFO] evaluation: oracle accuracy: 0.015152
+11/21/2020 20:22:07 [INFO] learner: avg. example bleu: 0.609326
+11/21/2020 20:22:07 [INFO] learner: accuracy: 0.000000
+11/21/2020 20:22:07 [INFO] learner: save current best model
+11/21/2020 20:22:07 [INFO] model: save model to [runs/model.npz]
+11/21/2020 20:22:07 [INFO] model: save model to [runs/model.iter560]
+11/21/2020 20:22:41 [INFO] learner: [Epoch 10] cumulative loss = 37.281026, (took 164s)
+Epoch 11, eta 46s
+11/21/2020 20:23:35 [INFO] learner: [Epoch 11] cumulative loss = 33.704170, (took 53s)
+Epoch 12, eta 45s
+11/21/2020 20:24:27 [INFO] learner: [Epoch 12] cumulative loss = 31.415589, (took 52s)
+Epoch 13, eta 63s
+11/21/2020 20:25:20 [INFO] learner: [Epoch 13] cumulative loss = 28.367117, (took 53s)
+Epoch 14, eta 59s
+11/21/2020 20:26:14 [INFO] learner: [Epoch 14] cumulative loss = 27.044111, (took 53s)
+Epoch 15, eta 59s
+11/21/2020 20:26:42 [INFO] learner: begin validation
+11/21/2020 20:28:41 [INFO] evaluation: corpus level bleu: 0.589457
+11/21/2020 20:28:41 [INFO] evaluation: sentence level bleu: 0.624030
+11/21/2020 20:28:41 [INFO] evaluation: accuracy: 0.015152
+11/21/2020 20:28:41 [INFO] evaluation: oracle bleu: 0.712803
+11/21/2020 20:28:41 [INFO] evaluation: oracle accuracy: 0.060606
+11/21/2020 20:28:41 [INFO] learner: avg. example bleu: 0.624030
+11/21/2020 20:28:41 [INFO] learner: accuracy: 0.015152
+11/21/2020 20:28:41 [INFO] learner: save current best model
+11/21/2020 20:28:41 [INFO] model: save model to [runs/model.npz]
+11/21/2020 20:28:41 [INFO] model: save model to [runs/model.iter840]
+11/21/2020 20:29:06 [INFO] learner: [Epoch 15] cumulative loss = 24.075792, (took 172s)
+Epoch 16, eta 54s
+11/21/2020 20:30:01 [INFO] learner: [Epoch 16] cumulative loss = 21.643838, (took 54s)
+Epoch 17, eta 64s
+11/21/2020 20:30:54 [INFO] learner: [Epoch 17] cumulative loss = 20.088307, (took 53s)
+Epoch 18, eta 50s
+11/21/2020 20:31:48 [INFO] learner: [Epoch 18] cumulative loss = 18.878357, (took 53s)
+Epoch 19, eta 74s
+11/21/2020 20:32:38 [INFO] learner: [Epoch 19] cumulative loss = 17.053007, (took 50s)
+Epoch 20, eta 49s
+11/21/2020 20:33:17 [INFO] learner: begin validation
+11/21/2020 20:35:31 [INFO] evaluation: corpus level bleu: 0.660697
+11/21/2020 20:35:31 [INFO] evaluation: sentence level bleu: 0.696906
+11/21/2020 20:35:31 [INFO] evaluation: accuracy: 0.075758
+11/21/2020 20:35:31 [INFO] evaluation: oracle bleu: 0.772806
+11/21/2020 20:35:31 [INFO] evaluation: oracle accuracy: 0.136364
+11/21/2020 20:35:31 [INFO] learner: avg. example bleu: 0.696906
+11/21/2020 20:35:31 [INFO] learner: accuracy: 0.075758
+11/21/2020 20:35:31 [INFO] learner: save current best model
+11/21/2020 20:35:31 [INFO] model: save model to [runs/model.npz]
+11/21/2020 20:35:31 [INFO] model: save model to [runs/model.iter1120]
+11/21/2020 20:35:45 [INFO] learner: [Epoch 20] cumulative loss = 15.659637, (took 186s)
+Epoch 21, eta 42s
+11/21/2020 20:36:36 [INFO] learner: [Epoch 21] cumulative loss = 14.688538, (took 51s)
+Epoch 22, eta 53s
+11/21/2020 20:37:29 [INFO] learner: [Epoch 22] cumulative loss = 13.467742, (took 52s)
+Epoch 23, eta 49s
+11/21/2020 20:38:21 [INFO] learner: [Epoch 23] cumulative loss = 12.252265, (took 51s)
+Epoch 24, eta 59s
+11/21/2020 20:39:15 [INFO] learner: [Epoch 24] cumulative loss = 11.277427, (took 54s)
+Epoch 25, eta 47s
+11/21/2020 20:40:04 [INFO] learner: begin validation
+11/21/2020 20:42:10 [INFO] evaluation: corpus level bleu: 0.687790
+11/21/2020 20:42:10 [INFO] evaluation: sentence level bleu: 0.728821
+11/21/2020 20:42:10 [INFO] evaluation: accuracy: 0.060606
+11/21/2020 20:42:10 [INFO] evaluation: oracle bleu: 0.788070
+11/21/2020 20:42:10 [INFO] evaluation: oracle accuracy: 0.166667
+11/21/2020 20:42:10 [INFO] learner: avg. example bleu: 0.728821
+11/21/2020 20:42:10 [INFO] learner: accuracy: 0.060606
+11/21/2020 20:42:10 [INFO] learner: save current best model
+11/21/2020 20:42:10 [INFO] model: save model to [runs/model.npz]
+11/21/2020 20:42:11 [INFO] model: save model to [runs/model.iter1400]
+11/21/2020 20:42:14 [INFO] learner: [Epoch 25] cumulative loss = 10.687390, (took 179s)
+Epoch 26, eta 54s
+11/21/2020 20:43:05 [INFO] learner: [Epoch 26] cumulative loss = 9.918621, (took 51s)
+Epoch 27, eta 50s
+11/21/2020 20:43:57 [INFO] learner: [Epoch 27] cumulative loss = 9.283113, (took 51s)
+Epoch 28, eta 65s
+11/21/2020 20:44:50 [INFO] learner: [Epoch 28] cumulative loss = 8.088677, (took 53s)
+Epoch 29, eta 43s
+11/21/2020 20:45:43 [INFO] learner: [Epoch 29] cumulative loss = 7.489458, (took 53s)
+Epoch 30, eta 52s
+11/21/2020 20:46:34 [INFO] learner: [Epoch 30] cumulative loss = 7.260266, (took 50s)
+Epoch 31, eta 50s
+11/21/2020 20:46:40 [INFO] learner: begin validation
+11/21/2020 20:49:00 [INFO] evaluation: corpus level bleu: 0.703156
+11/21/2020 20:49:00 [INFO] evaluation: sentence level bleu: 0.720983
+11/21/2020 20:49:00 [INFO] evaluation: accuracy: 0.075758
+11/21/2020 20:49:00 [INFO] evaluation: oracle bleu: 0.784643
+11/21/2020 20:49:00 [INFO] evaluation: oracle accuracy: 0.151515
+11/21/2020 20:49:00 [INFO] learner: avg. example bleu: 0.720983
+11/21/2020 20:49:00 [INFO] learner: accuracy: 0.075758
+11/21/2020 20:49:00 [INFO] learner: hitting patience_counter: 1
+11/21/2020 20:49:00 [INFO] model: save model to [runs/model.iter1680]
+11/21/2020 20:49:48 [INFO] learner: [Epoch 31] cumulative loss = 6.368487, (took 193s)
+Epoch 32, eta 56s
+11/21/2020 20:50:39 [INFO] learner: [Epoch 32] cumulative loss = 5.947981, (took 50s)
+Epoch 33, eta 51s
+11/21/2020 20:51:32 [INFO] learner: [Epoch 33] cumulative loss = 5.788106, (took 53s)
+Epoch 34, eta 53s
+11/21/2020 20:52:25 [INFO] learner: [Epoch 34] cumulative loss = 5.226243, (took 52s)
+Epoch 35, eta 37s
+11/21/2020 20:53:18 [INFO] learner: [Epoch 35] cumulative loss = 4.625749, (took 52s)
+Epoch 36, eta 50s
+11/21/2020 20:53:31 [INFO] learner: begin validation
+11/21/2020 20:55:45 [INFO] evaluation: corpus level bleu: 0.710748
+11/21/2020 20:55:45 [INFO] evaluation: sentence level bleu: 0.743312
+11/21/2020 20:55:45 [INFO] evaluation: accuracy: 0.090909
+11/21/2020 20:55:45 [INFO] evaluation: oracle bleu: 0.810853
+11/21/2020 20:55:45 [INFO] evaluation: oracle accuracy: 0.196970
+11/21/2020 20:55:45 [INFO] learner: avg. example bleu: 0.743312
+11/21/2020 20:55:45 [INFO] learner: accuracy: 0.090909
+11/21/2020 20:55:45 [INFO] learner: save current best model
+11/21/2020 20:55:45 [INFO] model: save model to [runs/model.npz]
+11/21/2020 20:55:45 [INFO] model: save model to [runs/model.iter1960]
+11/21/2020 20:56:25 [INFO] learner: [Epoch 36] cumulative loss = 4.351605, (took 186s)
+Epoch 37, eta 63s
+11/21/2020 20:57:18 [INFO] learner: [Epoch 37] cumulative loss = 4.355287, (took 53s)
+Epoch 38, eta 45s
+11/21/2020 20:58:11 [INFO] learner: [Epoch 38] cumulative loss = 4.342944, (took 53s)
+Epoch 39, eta 55s
+11/21/2020 20:59:05 [INFO] learner: [Epoch 39] cumulative loss = 3.886079, (took 53s)
+Epoch 40, eta 39s
+11/21/2020 20:59:58 [INFO] learner: [Epoch 40] cumulative loss = 3.243597, (took 53s)
+Epoch 41, eta 63s
+11/21/2020 21:00:22 [INFO] learner: begin validation
+11/21/2020 21:02:42 [INFO] evaluation: corpus level bleu: 0.721179
+11/21/2020 21:02:42 [INFO] evaluation: sentence level bleu: 0.738532
+11/21/2020 21:02:42 [INFO] evaluation: accuracy: 0.090909
+11/21/2020 21:02:42 [INFO] evaluation: oracle bleu: 0.790767
+11/21/2020 21:02:42 [INFO] evaluation: oracle accuracy: 0.196970
+11/21/2020 21:02:42 [INFO] learner: avg. example bleu: 0.738532
+11/21/2020 21:02:42 [INFO] learner: accuracy: 0.090909
+11/21/2020 21:02:42 [INFO] learner: hitting patience_counter: 1
+11/21/2020 21:02:42 [INFO] model: save model to [runs/model.iter2240]
+11/21/2020 21:03:10 [INFO] learner: [Epoch 41] cumulative loss = 3.410827, (took 192s)
+Epoch 42, eta 41s
+11/21/2020 21:04:02 [INFO] learner: [Epoch 42] cumulative loss = 2.920101, (took 51s)
+Epoch 43, eta 61s
+11/21/2020 21:04:55 [INFO] learner: [Epoch 43] cumulative loss = 3.046033, (took 52s)
+Epoch 44, eta 51s
+11/21/2020 21:05:48 [INFO] learner: [Epoch 44] cumulative loss = 2.794677, (took 53s)
+Epoch 45, eta 43s
+11/21/2020 21:06:39 [INFO] learner: [Epoch 45] cumulative loss = 2.510855, (took 51s)
+Epoch 46, eta 71s
+11/21/2020 21:07:14 [INFO] learner: begin validation
+11/21/2020 21:09:35 [INFO] evaluation: corpus level bleu: 0.738963
+11/21/2020 21:09:35 [INFO] evaluation: sentence level bleu: 0.758667
+11/21/2020 21:09:35 [INFO] evaluation: accuracy: 0.121212
+11/21/2020 21:09:35 [INFO] evaluation: oracle bleu: 0.801047
+11/21/2020 21:09:35 [INFO] evaluation: oracle accuracy: 0.196970
+11/21/2020 21:09:35 [INFO] learner: avg. example bleu: 0.758667
+11/21/2020 21:09:35 [INFO] learner: accuracy: 0.121212
+11/21/2020 21:09:35 [INFO] learner: save current best model
+11/21/2020 21:09:35 [INFO] model: save model to [runs/model.npz]
+11/21/2020 21:09:35 [INFO] model: save model to [runs/model.iter2520]
+11/21/2020 21:09:56 [INFO] learner: [Epoch 46] cumulative loss = 2.345948, (took 196s)
+Epoch 47, eta 51s
+11/21/2020 21:10:49 [INFO] learner: [Epoch 47] cumulative loss = 2.056825, (took 52s)
+Epoch 48, eta 54s
+11/21/2020 21:11:42 [INFO] learner: [Epoch 48] cumulative loss = 2.242004, (took 53s)
+Epoch 49, eta 49s
+11/21/2020 21:12:34 [INFO] learner: [Epoch 49] cumulative loss = 2.540741, (took 52s)
+Epoch 50, eta 55s
+11/21/2020 21:13:26 [INFO] learner: [Epoch 50] cumulative loss = 2.168093, (took 51s)
+Epoch 51, eta 51s
+11/21/2020 21:14:11 [INFO] learner: begin validation
+11/21/2020 21:16:26 [INFO] evaluation: corpus level bleu: 0.740472
+11/21/2020 21:16:26 [INFO] evaluation: sentence level bleu: 0.754137
+11/21/2020 21:16:26 [INFO] evaluation: accuracy: 0.106061
+11/21/2020 21:16:26 [INFO] evaluation: oracle bleu: 0.806792
+11/21/2020 21:16:26 [INFO] evaluation: oracle accuracy: 0.166667
+11/21/2020 21:16:26 [INFO] learner: avg. example bleu: 0.754137
+11/21/2020 21:16:26 [INFO] learner: accuracy: 0.106061
+11/21/2020 21:16:26 [INFO] learner: hitting patience_counter: 1
+11/21/2020 21:16:26 [INFO] model: save model to [runs/model.iter2800]
+11/21/2020 21:16:35 [INFO] learner: [Epoch 51] cumulative loss = 1.834330, (took 189s)
+Epoch 52, eta 44s
+11/21/2020 21:17:28 [INFO] learner: [Epoch 52] cumulative loss = 1.916498, (took 52s)
+Epoch 53, eta 44s
+11/21/2020 21:18:21 [INFO] learner: [Epoch 53] cumulative loss = 1.754130, (took 53s)
+Epoch 54, eta 49s
+11/21/2020 21:19:14 [INFO] learner: [Epoch 54] cumulative loss = 1.751650, (took 53s)
+Epoch 55, eta 45s
+11/21/2020 21:20:07 [INFO] learner: [Epoch 55] cumulative loss = 1.673724, (took 52s)
+Epoch 56, eta 64s
+11/21/2020 21:20:59 [INFO] learner: [Epoch 56] cumulative loss = 1.471387, (took 51s)
+Epoch 5711/21/2020 21:21:01 [INFO] learner: begin validation
+11/21/2020 21:23:17 [INFO] evaluation: corpus level bleu: 0.744165
+11/21/2020 21:23:17 [INFO] evaluation: sentence level bleu: 0.763487
+11/21/2020 21:23:17 [INFO] evaluation: accuracy: 0.090909
+11/21/2020 21:23:17 [INFO] evaluation: oracle bleu: 0.807709
+11/21/2020 21:23:17 [INFO] evaluation: oracle accuracy: 0.212121
+11/21/2020 21:23:17 [INFO] learner: avg. example bleu: 0.763487
+11/21/2020 21:23:17 [INFO] learner: accuracy: 0.090909
+11/21/2020 21:23:17 [INFO] learner: save current best model
+11/21/2020 21:23:17 [INFO] model: save model to [runs/model.npz]
+11/21/2020 21:23:17 [INFO] model: save model to [runs/model.iter3080]
+, eta 1520s
+11/21/2020 21:24:09 [INFO] learner: [Epoch 57] cumulative loss = 1.501383, (took 190s)
+Epoch 58, eta 59s
+11/21/2020 21:25:02 [INFO] learner: [Epoch 58] cumulative loss = 1.239968, (took 52s)
+Epoch 59, eta 47s
+11/21/2020 21:25:56 [INFO] learner: [Epoch 59] cumulative loss = 1.226638, (took 54s)
+Epoch 60, eta 46s
+11/21/2020 21:26:49 [INFO] learner: [Epoch 60] cumulative loss = 1.140358, (took 53s)
+Epoch 61, eta 53s
+11/21/2020 21:27:41 [INFO] learner: [Epoch 61] cumulative loss = 1.324990, (took 52s)
+Epoch 62, eta 52s
+11/21/2020 21:27:52 [INFO] learner: begin validation
+11/21/2020 21:30:24 [INFO] evaluation: corpus level bleu: 0.731179
+11/21/2020 21:30:24 [INFO] evaluation: sentence level bleu: 0.745512
+11/21/2020 21:30:24 [INFO] evaluation: accuracy: 0.075758
+11/21/2020 21:30:24 [INFO] evaluation: oracle bleu: 0.807071
+11/21/2020 21:30:24 [INFO] evaluation: oracle accuracy: 0.181818
+11/21/2020 21:30:25 [INFO] learner: avg. example bleu: 0.745512
+11/21/2020 21:30:25 [INFO] learner: accuracy: 0.075758
+11/21/2020 21:30:25 [INFO] learner: hitting patience_counter: 1
+11/21/2020 21:30:25 [INFO] model: save model to [runs/model.iter3360]
+11/21/2020 21:31:06 [INFO] learner: [Epoch 62] cumulative loss = 1.719108, (took 204s)
+Epoch 63, eta 51s
+11/21/2020 21:31:59 [INFO] learner: [Epoch 63] cumulative loss = 1.127046, (took 53s)
+Epoch 64, eta 53s
+11/21/2020 21:32:53 [INFO] learner: [Epoch 64] cumulative loss = 1.404190, (took 53s)
+Epoch 65, eta 61s
+11/21/2020 21:33:45 [INFO] learner: [Epoch 65] cumulative loss = 1.133187, (took 52s)
+Epoch 66, eta 47s
+11/21/2020 21:34:37 [INFO] learner: [Epoch 66] cumulative loss = 0.946846, (took 51s)
+Epoch 67, eta 45s
+11/21/2020 21:34:59 [INFO] learner: begin validation
+11/21/2020 21:37:37 [INFO] evaluation: corpus level bleu: 0.754181
+11/21/2020 21:37:37 [INFO] evaluation: sentence level bleu: 0.760219
+11/21/2020 21:37:37 [INFO] evaluation: accuracy: 0.121212
+11/21/2020 21:37:37 [INFO] evaluation: oracle bleu: 0.812794
+11/21/2020 21:37:37 [INFO] evaluation: oracle accuracy: 0.212121
+11/21/2020 21:37:37 [INFO] learner: avg. example bleu: 0.760219
+11/21/2020 21:37:37 [INFO] learner: accuracy: 0.121212
+11/21/2020 21:37:37 [INFO] learner: hitting patience_counter: 2
+11/21/2020 21:37:37 [INFO] model: save model to [runs/model.iter3640]
+11/21/2020 21:38:09 [INFO] learner: [Epoch 67] cumulative loss = 1.119791, (took 211s)
+Epoch 68, eta 50s
+11/21/2020 21:39:01 [INFO] learner: [Epoch 68] cumulative loss = 1.081759, (took 52s)
+Epoch 69, eta 51s
+11/21/2020 21:39:55 [INFO] learner: [Epoch 69] cumulative loss = 1.120430, (took 53s)
+Epoch 70, eta 59s
+11/21/2020 21:40:47 [INFO] learner: [Epoch 70] cumulative loss = 0.989931, (took 52s)
+Epoch 71, eta 58s
+11/21/2020 21:41:42 [INFO] learner: [Epoch 71] cumulative loss = 0.921262, (took 55s)
+Epoch 72, eta 52s
+11/21/2020 21:42:15 [INFO] learner: begin validation
+11/21/2020 21:44:41 [INFO] evaluation: corpus level bleu: 0.745747
+11/21/2020 21:44:41 [INFO] evaluation: sentence level bleu: 0.763124
+11/21/2020 21:44:41 [INFO] evaluation: accuracy: 0.121212
+11/21/2020 21:44:41 [INFO] evaluation: oracle bleu: 0.811376
+11/21/2020 21:44:41 [INFO] evaluation: oracle accuracy: 0.212121
+11/21/2020 21:44:41 [INFO] learner: avg. example bleu: 0.763124
+11/21/2020 21:44:41 [INFO] learner: accuracy: 0.121212
+11/21/2020 21:44:41 [INFO] learner: hitting patience_counter: 3
+11/21/2020 21:44:41 [INFO] model: save model to [runs/model.iter3920]
+11/21/2020 21:45:03 [INFO] learner: [Epoch 72] cumulative loss = 1.037644, (took 201s)
+Epoch 73, eta 41s
+11/21/2020 21:45:55 [INFO] learner: [Epoch 73] cumulative loss = 0.839492, (took 51s)
+Epoch 74, eta 46s
+11/21/2020 21:46:48 [INFO] learner: [Epoch 74] cumulative loss = 0.873352, (took 52s)
+Epoch 75, eta 57s
+11/21/2020 21:47:40 [INFO] learner: [Epoch 75] cumulative loss = 0.853739, (took 52s)
+Epoch 76, eta 50s
+11/21/2020 21:48:34 [INFO] learner: [Epoch 76] cumulative loss = 1.161119, (took 53s)
+Epoch 77, eta 36s
+11/21/2020 21:49:14 [INFO] learner: begin validation
+11/21/2020 21:51:44 [INFO] evaluation: corpus level bleu: 0.735809
+11/21/2020 21:51:44 [INFO] evaluation: sentence level bleu: 0.750856
+11/21/2020 21:51:44 [INFO] evaluation: accuracy: 0.075758
+11/21/2020 21:51:44 [INFO] evaluation: oracle bleu: 0.808638
+11/21/2020 21:51:44 [INFO] evaluation: oracle accuracy: 0.227273
+11/21/2020 21:51:44 [INFO] learner: avg. example bleu: 0.750856
+11/21/2020 21:51:44 [INFO] learner: accuracy: 0.075758
+11/21/2020 21:51:44 [INFO] learner: hitting patience_counter: 4
+11/21/2020 21:51:44 [INFO] model: save model to [runs/model.iter4200]
+11/21/2020 21:51:57 [INFO] learner: [Epoch 77] cumulative loss = 0.819737, (took 203s)
+Epoch 78, eta 68s
+11/21/2020 21:52:50 [INFO] learner: [Epoch 78] cumulative loss = 0.846164, (took 52s)
+Epoch 79, eta 69s
+11/21/2020 21:53:42 [INFO] learner: [Epoch 79] cumulative loss = 0.713866, (took 52s)
+Epoch 80, eta 57s
+11/21/2020 21:54:36 [INFO] learner: [Epoch 80] cumulative loss = 0.785312, (took 53s)
+Epoch 81, eta 59s
+11/21/2020 21:55:29 [INFO] learner: [Epoch 81] cumulative loss = 0.828263, (took 52s)
+Epoch 82, eta 51s
+11/21/2020 21:56:20 [INFO] learner: begin validation
+11/21/2020 21:58:42 [INFO] evaluation: corpus level bleu: 0.741801
+11/21/2020 21:58:42 [INFO] evaluation: sentence level bleu: 0.766517
+11/21/2020 21:58:42 [INFO] evaluation: accuracy: 0.151515
+11/21/2020 21:58:42 [INFO] evaluation: oracle bleu: 0.830719
+11/21/2020 21:58:42 [INFO] evaluation: oracle accuracy: 0.212121
+11/21/2020 21:58:42 [INFO] learner: avg. example bleu: 0.766517
+11/21/2020 21:58:42 [INFO] learner: accuracy: 0.151515
+11/21/2020 21:58:42 [INFO] learner: save current best model
+11/21/2020 21:58:42 [INFO] model: save model to [runs/model.npz]
+11/21/2020 21:58:43 [INFO] model: save model to [runs/model.iter4480]
+11/21/2020 21:58:45 [INFO] learner: [Epoch 82] cumulative loss = 0.719297, (took 196s)
+Epoch 83, eta 53s
+11/21/2020 21:59:38 [INFO] learner: [Epoch 83] cumulative loss = 0.535079, (took 53s)
+Epoch 84, eta 59s
+11/21/2020 22:00:30 [INFO] learner: [Epoch 84] cumulative loss = 0.675411, (took 52s)
+Epoch 85, eta 47s
+11/21/2020 22:01:24 [INFO] learner: [Epoch 85] cumulative loss = 0.533525, (took 53s)
+Epoch 86, eta 68s
+11/21/2020 22:02:16 [INFO] learner: [Epoch 86] cumulative loss = 0.931355, (took 52s)
+Epoch 87, eta 60s
+11/21/2020 22:03:10 [INFO] learner: [Epoch 87] cumulative loss = 0.944836, (took 54s)
+Epoch 88, eta 39s
+11/21/2020 22:03:17 [INFO] learner: begin validation
+11/21/2020 22:05:39 [INFO] evaluation: corpus level bleu: 0.735106
+11/21/2020 22:05:39 [INFO] evaluation: sentence level bleu: 0.762260
+11/21/2020 22:05:39 [INFO] evaluation: accuracy: 0.181818
+11/21/2020 22:05:39 [INFO] evaluation: oracle bleu: 0.810883
+11/21/2020 22:05:39 [INFO] evaluation: oracle accuracy: 0.227273
+11/21/2020 22:05:39 [INFO] learner: avg. example bleu: 0.762260
+11/21/2020 22:05:39 [INFO] learner: accuracy: 0.181818
+11/21/2020 22:05:39 [INFO] learner: hitting patience_counter: 1
+11/21/2020 22:05:39 [INFO] model: save model to [runs/model.iter4760]
+11/21/2020 22:06:25 [INFO] learner: [Epoch 88] cumulative loss = 0.725340, (took 194s)
+Epoch 89, eta 47s
+11/21/2020 22:07:17 [INFO] learner: [Epoch 89] cumulative loss = 0.708554, (took 52s)
+Epoch 90, eta 59s
+11/21/2020 22:08:10 [INFO] learner: [Epoch 90] cumulative loss = 0.665379, (took 52s)
+Epoch 91, eta 51s
+11/21/2020 22:09:03 [INFO] learner: [Epoch 91] cumulative loss = 0.773614, (took 52s)
+Epoch 92, eta 51s
+11/21/2020 22:09:56 [INFO] learner: [Epoch 92] cumulative loss = 0.519665, (took 53s)
+Epoch 93, eta 52s
+11/21/2020 22:10:14 [INFO] learner: begin validation
+11/21/2020 22:12:55 [INFO] evaluation: corpus level bleu: 0.755395
+11/21/2020 22:12:55 [INFO] evaluation: sentence level bleu: 0.778222
+11/21/2020 22:12:55 [INFO] evaluation: accuracy: 0.166667
+11/21/2020 22:12:55 [INFO] evaluation: oracle bleu: 0.827801
+11/21/2020 22:12:55 [INFO] evaluation: oracle accuracy: 0.227273
+11/21/2020 22:12:55 [INFO] learner: avg. example bleu: 0.778222
+11/21/2020 22:12:55 [INFO] learner: accuracy: 0.166667
+11/21/2020 22:12:55 [INFO] learner: save current best model
+11/21/2020 22:12:55 [INFO] model: save model to [runs/model.npz]
+11/21/2020 22:12:56 [INFO] model: save model to [runs/model.iter5040]
+11/21/2020 22:13:32 [INFO] learner: [Epoch 93] cumulative loss = 0.701619, (took 215s)
+Epoch 94, eta 38s
+11/21/2020 22:14:25 [INFO] learner: [Epoch 94] cumulative loss = 0.607533, (took 53s)
+Epoch 95, eta 60s
+11/21/2020 22:15:16 [INFO] learner: [Epoch 95] cumulative loss = 0.548772, (took 51s)
+Epoch 96, eta 45s
+11/21/2020 22:16:09 [INFO] learner: [Epoch 96] cumulative loss = 0.546099, (took 52s)
+Epoch 97, eta 40s
+11/21/2020 22:17:02 [INFO] learner: [Epoch 97] cumulative loss = 0.485820, (took 53s)
+Epoch 98, eta 52s
+11/21/2020 22:17:30 [INFO] learner: begin validation
+11/21/2020 22:20:01 [INFO] evaluation: corpus level bleu: 0.763413
+11/21/2020 22:20:01 [INFO] evaluation: sentence level bleu: 0.766678
+11/21/2020 22:20:01 [INFO] evaluation: accuracy: 0.151515
+11/21/2020 22:20:01 [INFO] evaluation: oracle bleu: 0.807515
+11/21/2020 22:20:01 [INFO] evaluation: oracle accuracy: 0.196970
+11/21/2020 22:20:01 [INFO] learner: avg. example bleu: 0.766678
+11/21/2020 22:20:01 [INFO] learner: accuracy: 0.151515
+11/21/2020 22:20:01 [INFO] learner: hitting patience_counter: 1
+11/21/2020 22:20:01 [INFO] model: save model to [runs/model.iter5320]
+11/21/2020 22:20:26 [INFO] learner: [Epoch 98] cumulative loss = 0.748451, (took 204s)
+Epoch 99, eta 59s
+11/21/2020 22:21:19 [INFO] learner: [Epoch 99] cumulative loss = 0.526540, (took 52s)
+Epoch 100, eta 64s
+11/21/2020 22:22:13 [INFO] learner: [Epoch 100] cumulative loss = 0.532887, (took 53s)
+Epoch 101, eta 39s
+11/21/2020 22:23:05 [INFO] learner: [Epoch 101] cumulative loss = 0.523948, (took 52s)
+Epoch 102, eta 61s
+11/21/2020 22:23:58 [INFO] learner: [Epoch 102] cumulative loss = 0.514982, (took 52s)
+Epoch 103, eta 39s
+11/21/2020 22:24:34 [INFO] learner: begin validation
+11/21/2020 22:27:10 [INFO] evaluation: corpus level bleu: 0.749865
+11/21/2020 22:27:10 [INFO] evaluation: sentence level bleu: 0.756397
+11/21/2020 22:27:10 [INFO] evaluation: accuracy: 0.151515
+11/21/2020 22:27:10 [INFO] evaluation: oracle bleu: 0.804113
+11/21/2020 22:27:10 [INFO] evaluation: oracle accuracy: 0.212121
+11/21/2020 22:27:10 [INFO] learner: avg. example bleu: 0.756397
+11/21/2020 22:27:10 [INFO] learner: accuracy: 0.151515
+11/21/2020 22:27:10 [INFO] learner: hitting patience_counter: 2
+11/21/2020 22:27:10 [INFO] model: save model to [runs/model.iter5600]
+11/21/2020 22:27:27 [INFO] learner: [Epoch 103] cumulative loss = 0.490615, (took 209s)
+Epoch 104, eta 59s
+11/21/2020 22:28:20 [INFO] learner: [Epoch 104] cumulative loss = 0.481056, (took 52s)
+Epoch 105, eta 45s
+11/21/2020 22:29:14 [INFO] learner: [Epoch 105] cumulative loss = 0.421543, (took 54s)
+Epoch 106, eta 64s
+11/21/2020 22:30:08 [INFO] learner: [Epoch 106] cumulative loss = 0.441693, (took 54s)
+Epoch 107, eta 53s
+11/21/2020 22:31:02 [INFO] learner: [Epoch 107] cumulative loss = 0.472306, (took 53s)
+Epoch 108, eta 45s
+11/21/2020 22:31:48 [INFO] learner: begin validation
+11/21/2020 22:34:25 [INFO] evaluation: corpus level bleu: 0.756455
+11/21/2020 22:34:25 [INFO] evaluation: sentence level bleu: 0.760028
+11/21/2020 22:34:25 [INFO] evaluation: accuracy: 0.166667
+11/21/2020 22:34:25 [INFO] evaluation: oracle bleu: 0.808127
+11/21/2020 22:34:25 [INFO] evaluation: oracle accuracy: 0.227273
+11/21/2020 22:34:25 [INFO] learner: avg. example bleu: 0.760028
+11/21/2020 22:34:25 [INFO] learner: accuracy: 0.166667
+11/21/2020 22:34:25 [INFO] learner: hitting patience_counter: 3
+11/21/2020 22:34:25 [INFO] model: save model to [runs/model.iter5880]
+11/21/2020 22:34:32 [INFO] learner: [Epoch 108] cumulative loss = 0.479254, (took 209s)
+Epoch 109, eta 67s
+11/21/2020 22:35:27 [INFO] learner: [Epoch 109] cumulative loss = 0.526956, (took 55s)
+Epoch 110, eta 68s
+11/21/2020 22:36:21 [INFO] learner: [Epoch 110] cumulative loss = 0.464972, (took 53s)
+Epoch 111, eta 51s
+11/21/2020 22:37:14 [INFO] learner: [Epoch 111] cumulative loss = 0.505901, (took 53s)
+Epoch 112, eta 57s
+11/21/2020 22:38:08 [INFO] learner: [Epoch 112] cumulative loss = 0.584489, (took 53s)
+Epoch 113, eta 60s
+11/21/2020 22:39:01 [INFO] learner: [Epoch 113] cumulative loss = 0.488734, (took 53s)
+Epoch 11411/21/2020 22:39:06 [INFO] learner: begin validation
+11/21/2020 22:41:35 [INFO] evaluation: corpus level bleu: 0.764624
+11/21/2020 22:41:35 [INFO] evaluation: sentence level bleu: 0.768990
+11/21/2020 22:41:35 [INFO] evaluation: accuracy: 0.136364
+11/21/2020 22:41:35 [INFO] evaluation: oracle bleu: 0.821265
+11/21/2020 22:41:35 [INFO] evaluation: oracle accuracy: 0.227273
+11/21/2020 22:41:35 [INFO] learner: avg. example bleu: 0.768990
+11/21/2020 22:41:35 [INFO] learner: accuracy: 0.136364
+11/21/2020 22:41:35 [INFO] learner: hitting patience_counter: 4
+11/21/2020 22:41:35 [INFO] model: save model to [runs/model.iter6160]
+, eta 1658s
+11/21/2020 22:42:27 [INFO] learner: [Epoch 114] cumulative loss = 0.405850, (took 205s)
+Epoch 115, eta 49s
+11/21/2020 22:43:21 [INFO] learner: [Epoch 115] cumulative loss = 0.385977, (took 53s)
+Epoch 116, eta 48s
+11/21/2020 22:44:19 [INFO] learner: [Epoch 116] cumulative loss = 0.411977, (took 58s)
+Epoch 117, eta 64s
+11/21/2020 22:45:16 [INFO] learner: [Epoch 117] cumulative loss = 0.461203, (took 57s)
+Epoch 118, eta 45s
+11/21/2020 22:46:09 [INFO] learner: [Epoch 118] cumulative loss = 0.381130, (took 53s)
+Epoch 119, eta 58s
+11/21/2020 22:46:23 [INFO] learner: begin validation
+11/21/2020 22:49:02 [INFO] evaluation: corpus level bleu: 0.754898
+11/21/2020 22:49:02 [INFO] evaluation: sentence level bleu: 0.782306
+11/21/2020 22:49:02 [INFO] evaluation: accuracy: 0.121212
+11/21/2020 22:49:02 [INFO] evaluation: oracle bleu: 0.827893
+11/21/2020 22:49:02 [INFO] evaluation: oracle accuracy: 0.196970
+11/21/2020 22:49:02 [INFO] learner: avg. example bleu: 0.782306
+11/21/2020 22:49:02 [INFO] learner: accuracy: 0.121212
+11/21/2020 22:49:02 [INFO] learner: save current best model
+11/21/2020 22:49:02 [INFO] model: save model to [runs/model.npz]
+11/21/2020 22:49:02 [INFO] model: save model to [runs/model.iter6440]
+11/21/2020 22:49:45 [INFO] learner: [Epoch 119] cumulative loss = 0.350083, (took 215s)
+Epoch 120, eta 54s
+11/21/2020 22:50:41 [INFO] learner: [Epoch 120] cumulative loss = 0.360756, (took 55s)
+Epoch 121, eta 43s
+11/21/2020 22:51:35 [INFO] learner: [Epoch 121] cumulative loss = 0.300240, (took 53s)
+Epoch 122, eta 55s
+11/21/2020 22:52:30 [INFO] learner: [Epoch 122] cumulative loss = 0.301123, (took 55s)
+Epoch 123, eta 58s
+11/21/2020 22:53:24 [INFO] learner: [Epoch 123] cumulative loss = 0.279459, (took 54s)
+Epoch 124, eta 55s
+11/21/2020 22:53:48 [INFO] learner: begin validation
+11/21/2020 22:56:20 [INFO] evaluation: corpus level bleu: 0.760429
+11/21/2020 22:56:20 [INFO] evaluation: sentence level bleu: 0.778866
+11/21/2020 22:56:20 [INFO] evaluation: accuracy: 0.106061
+11/21/2020 22:56:20 [INFO] evaluation: oracle bleu: 0.820910
+11/21/2020 22:56:20 [INFO] evaluation: oracle accuracy: 0.181818
+11/21/2020 22:56:21 [INFO] learner: avg. example bleu: 0.778866
+11/21/2020 22:56:21 [INFO] learner: accuracy: 0.106061
+11/21/2020 22:56:21 [INFO] learner: hitting patience_counter: 1
+11/21/2020 22:56:21 [INFO] model: save model to [runs/model.iter6720]
+11/21/2020 22:56:51 [INFO] learner: [Epoch 124] cumulative loss = 0.349940, (took 207s)
+Epoch 125, eta 58s
+11/21/2020 22:57:46 [INFO] learner: [Epoch 125] cumulative loss = 0.514145, (took 54s)
+Epoch 126, eta 42s
+11/21/2020 22:58:40 [INFO] learner: [Epoch 126] cumulative loss = 0.574289, (took 54s)
+Epoch 127, eta 44s
+11/21/2020 22:59:33 [INFO] learner: [Epoch 127] cumulative loss = 0.359266, (took 52s)
+Epoch 128, eta 61s
+11/21/2020 23:00:30 [INFO] learner: [Epoch 128] cumulative loss = 0.368714, (took 56s)
+Epoch 129, eta 51s
+11/21/2020 23:01:06 [INFO] learner: begin validation
+11/21/2020 23:03:41 [INFO] evaluation: corpus level bleu: 0.758276
+11/21/2020 23:03:41 [INFO] evaluation: sentence level bleu: 0.774511
+11/21/2020 23:03:41 [INFO] evaluation: accuracy: 0.090909
+11/21/2020 23:03:41 [INFO] evaluation: oracle bleu: 0.817414
+11/21/2020 23:03:41 [INFO] evaluation: oracle accuracy: 0.212121
+11/21/2020 23:03:41 [INFO] learner: avg. example bleu: 0.774511
+11/21/2020 23:03:41 [INFO] learner: accuracy: 0.090909
+11/21/2020 23:03:41 [INFO] learner: hitting patience_counter: 2
+11/21/2020 23:03:41 [INFO] model: save model to [runs/model.iter7000]
+11/21/2020 23:03:59 [INFO] learner: [Epoch 129] cumulative loss = 0.267897, (took 209s)
+Epoch 130, eta 52s
+11/21/2020 23:04:54 [INFO] learner: [Epoch 130] cumulative loss = 0.364849, (took 54s)
+Epoch 131, eta 44s
+11/21/2020 23:05:48 [INFO] learner: [Epoch 131] cumulative loss = 0.343908, (took 53s)
+Epoch 132, eta 44s
+11/21/2020 23:06:41 [INFO] learner: [Epoch 132] cumulative loss = 0.302545, (took 53s)
+Epoch 133, eta 40s
+11/21/2020 23:07:34 [INFO] learner: [Epoch 133] cumulative loss = 0.278156, (took 52s)
+Epoch 134, eta 67s
+11/21/2020 23:08:19 [INFO] learner: begin validation
+11/21/2020 23:10:45 [INFO] evaluation: corpus level bleu: 0.734303
+11/21/2020 23:10:45 [INFO] evaluation: sentence level bleu: 0.754337
+11/21/2020 23:10:45 [INFO] evaluation: accuracy: 0.151515
+11/21/2020 23:10:45 [INFO] evaluation: oracle bleu: 0.815303
+11/21/2020 23:10:45 [INFO] evaluation: oracle accuracy: 0.212121
+11/21/2020 23:10:45 [INFO] learner: avg. example bleu: 0.754337
+11/21/2020 23:10:45 [INFO] learner: accuracy: 0.151515
+11/21/2020 23:10:45 [INFO] learner: hitting patience_counter: 3
+11/21/2020 23:10:45 [INFO] model: save model to [runs/model.iter7280]
+11/21/2020 23:10:55 [INFO] learner: [Epoch 134] cumulative loss = 0.287049, (took 200s)
+Epoch 135, eta 48s
+11/21/2020 23:11:48 [INFO] learner: [Epoch 135] cumulative loss = 0.394422, (took 53s)
+Epoch 136, eta 59s
+11/21/2020 23:12:41 [INFO] learner: [Epoch 136] cumulative loss = 0.279579, (took 52s)
+Epoch 137, eta 40s
+11/21/2020 23:13:35 [INFO] learner: [Epoch 137] cumulative loss = 0.377736, (took 54s)
+Epoch 138, eta 54s
+11/21/2020 23:14:30 [INFO] learner: [Epoch 138] cumulative loss = 0.366525, (took 54s)
+Epoch 139, eta 50s
+11/21/2020 23:15:23 [INFO] learner: begin validation
+11/21/2020 23:17:56 [INFO] evaluation: corpus level bleu: 0.754080
+11/21/2020 23:17:56 [INFO] evaluation: sentence level bleu: 0.762961
+11/21/2020 23:17:56 [INFO] evaluation: accuracy: 0.151515
+11/21/2020 23:17:56 [INFO] evaluation: oracle bleu: 0.809647
+11/21/2020 23:17:56 [INFO] evaluation: oracle accuracy: 0.196970
+11/21/2020 23:17:56 [INFO] learner: avg. example bleu: 0.762961
+11/21/2020 23:17:56 [INFO] learner: accuracy: 0.151515
+11/21/2020 23:17:56 [INFO] learner: hitting patience_counter: 4
+11/21/2020 23:17:56 [INFO] model: save model to [runs/model.iter7560]
+11/21/2020 23:17:57 [INFO] learner: [Epoch 139] cumulative loss = 0.311936, (took 206s)
+Epoch 140, eta 45s
+11/21/2020 23:18:50 [INFO] learner: [Epoch 140] cumulative loss = 0.325077, (took 52s)
+Epoch 141, eta 47s
+11/21/2020 23:19:43 [INFO] learner: [Epoch 141] cumulative loss = 0.351405, (took 53s)
+Epoch 142, eta 50s
+11/21/2020 23:20:36 [INFO] learner: [Epoch 142] cumulative loss = 0.356063, (took 53s)
+Epoch 143, eta 57s
+11/21/2020 23:21:29 [INFO] learner: [Epoch 143] cumulative loss = 0.254936, (took 52s)
+Epoch 144, eta 48s
+11/21/2020 23:22:23 [INFO] learner: [Epoch 144] cumulative loss = 0.393473, (took 54s)
+Epoch 145, eta 43s
+11/21/2020 23:22:33 [INFO] learner: begin validation
+11/21/2020 23:24:52 [INFO] evaluation: corpus level bleu: 0.749254
+11/21/2020 23:24:52 [INFO] evaluation: sentence level bleu: 0.771298
+11/21/2020 23:24:52 [INFO] evaluation: accuracy: 0.121212
+11/21/2020 23:24:52 [INFO] evaluation: oracle bleu: 0.811588
+11/21/2020 23:24:52 [INFO] evaluation: oracle accuracy: 0.196970
+11/21/2020 23:24:52 [INFO] learner: avg. example bleu: 0.771298
+11/21/2020 23:24:52 [INFO] learner: accuracy: 0.121212
+11/21/2020 23:24:52 [INFO] learner: hitting patience_counter: 5
+11/21/2020 23:24:52 [INFO] model: save model to [runs/model.iter7840]
+11/21/2020 23:25:37 [INFO] learner: [Epoch 145] cumulative loss = 0.402214, (took 193s)
+Epoch 146, eta 43s
+11/21/2020 23:26:31 [INFO] learner: [Epoch 146] cumulative loss = 0.436702, (took 53s)
+Epoch 147, eta 50s
+11/21/2020 23:27:25 [INFO] learner: [Epoch 147] cumulative loss = 0.319088, (took 54s)
+Epoch 148, eta 51s
+11/21/2020 23:28:18 [INFO] learner: [Epoch 148] cumulative loss = 0.284306, (took 52s)
+Epoch 149, eta 45s
+11/21/2020 23:29:10 [INFO] learner: [Epoch 149] cumulative loss = 0.366168, (took 52s)
+Epoch 150, eta 49s
+11/21/2020 23:29:29 [INFO] learner: begin validation
+11/21/2020 23:31:53 [INFO] evaluation: corpus level bleu: 0.745421
+11/21/2020 23:31:53 [INFO] evaluation: sentence level bleu: 0.760467
+11/21/2020 23:31:53 [INFO] evaluation: accuracy: 0.151515
+11/21/2020 23:31:53 [INFO] evaluation: oracle bleu: 0.812293
+11/21/2020 23:31:53 [INFO] evaluation: oracle accuracy: 0.181818
+11/21/2020 23:31:53 [INFO] learner: avg. example bleu: 0.760467
+11/21/2020 23:31:53 [INFO] learner: accuracy: 0.151515
+11/21/2020 23:31:53 [INFO] learner: hitting patience_counter: 6
+11/21/2020 23:31:53 [INFO] model: save model to [runs/model.iter8120]
+11/21/2020 23:32:28 [INFO] learner: [Epoch 150] cumulative loss = 0.223051, (took 197s)
+Epoch 151, eta 65s
+11/21/2020 23:33:22 [INFO] learner: [Epoch 151] cumulative loss = 0.293862, (took 54s)
+Epoch 152, eta 53s
+11/21/2020 23:34:14 [INFO] learner: [Epoch 152] cumulative loss = 0.295175, (took 51s)
+Epoch 153, eta 48s
+11/21/2020 23:35:06 [INFO] learner: [Epoch 153] cumulative loss = 0.277062, (took 51s)
+Epoch 154, eta 51s
+11/21/2020 23:35:59 [INFO] learner: [Epoch 154] cumulative loss = 0.356386, (took 52s)
+Epoch 155, eta 42s
+11/21/2020 23:36:28 [INFO] learner: begin validation
+11/21/2020 23:39:05 [INFO] evaluation: corpus level bleu: 0.747366
+11/21/2020 23:39:05 [INFO] evaluation: sentence level bleu: 0.743082
+11/21/2020 23:39:05 [INFO] evaluation: accuracy: 0.121212
+11/21/2020 23:39:05 [INFO] evaluation: oracle bleu: 0.793484
+11/21/2020 23:39:05 [INFO] evaluation: oracle accuracy: 0.227273
+11/21/2020 23:39:05 [INFO] learner: avg. example bleu: 0.743082
+11/21/2020 23:39:05 [INFO] learner: accuracy: 0.121212
+11/21/2020 23:39:05 [INFO] learner: hitting patience_counter: 7
+11/21/2020 23:39:05 [INFO] model: save model to [runs/model.iter8400]
+11/21/2020 23:39:29 [INFO] learner: [Epoch 155] cumulative loss = 0.342039, (took 210s)
+Epoch 156, eta 59s
+11/21/2020 23:40:22 [INFO] learner: [Epoch 156] cumulative loss = 0.398281, (took 53s)
+Epoch 157, eta 56s
+11/21/2020 23:41:16 [INFO] learner: [Epoch 157] cumulative loss = 0.299160, (took 53s)
+Epoch 158, eta 51s
+11/21/2020 23:42:09 [INFO] learner: [Epoch 158] cumulative loss = 0.323630, (took 53s)
+Epoch 159, eta 50s
+11/21/2020 23:43:02 [INFO] learner: [Epoch 159] cumulative loss = 0.316839, (took 52s)
+Epoch 160, eta 49s
+11/21/2020 23:43:42 [INFO] learner: begin validation
+11/21/2020 23:46:18 [INFO] evaluation: corpus level bleu: 0.758014
+11/21/2020 23:46:18 [INFO] evaluation: sentence level bleu: 0.765378
+11/21/2020 23:46:18 [INFO] evaluation: accuracy: 0.136364
+11/21/2020 23:46:18 [INFO] evaluation: oracle bleu: 0.810563
+11/21/2020 23:46:18 [INFO] evaluation: oracle accuracy: 0.227273
+11/21/2020 23:46:18 [INFO] learner: avg. example bleu: 0.765378
+11/21/2020 23:46:18 [INFO] learner: accuracy: 0.136364
+11/21/2020 23:46:18 [INFO] learner: hitting patience_counter: 8
+11/21/2020 23:46:18 [INFO] model: save model to [runs/model.iter8680]
+11/21/2020 23:46:33 [INFO] learner: [Epoch 160] cumulative loss = 0.280809, (took 210s)
+Epoch 161, eta 46s
+11/21/2020 23:47:26 [INFO] learner: [Epoch 161] cumulative loss = 0.211885, (took 53s)
+Epoch 162, eta 58s
+11/21/2020 23:48:19 [INFO] learner: [Epoch 162] cumulative loss = 0.329643, (took 53s)
+Epoch 163, eta 55s
+11/21/2020 23:49:10 [INFO] learner: [Epoch 163] cumulative loss = 0.249892, (took 50s)
+Epoch 164, eta 52s
+11/21/2020 23:50:03 [INFO] learner: [Epoch 164] cumulative loss = 0.194007, (took 52s)
+Epoch 165, eta 52s
+11/21/2020 23:50:52 [INFO] learner: begin validation
+11/21/2020 23:53:27 [INFO] evaluation: corpus level bleu: 0.754028
+11/21/2020 23:53:27 [INFO] evaluation: sentence level bleu: 0.750929
+11/21/2020 23:53:27 [INFO] evaluation: accuracy: 0.106061
+11/21/2020 23:53:27 [INFO] evaluation: oracle bleu: 0.804088
+11/21/2020 23:53:27 [INFO] evaluation: oracle accuracy: 0.181818
+11/21/2020 23:53:27 [INFO] learner: avg. example bleu: 0.750929
+11/21/2020 23:53:27 [INFO] learner: accuracy: 0.106061
+11/21/2020 23:53:27 [INFO] learner: hitting patience_counter: 9
+11/21/2020 23:53:27 [INFO] model: save model to [runs/model.iter8960]
+11/21/2020 23:53:31 [INFO] learner: [Epoch 165] cumulative loss = 0.255768, (took 207s)
+Epoch 166, eta 45s
+11/21/2020 23:54:24 [INFO] learner: [Epoch 166] cumulative loss = 0.178820, (took 52s)
+Epoch 167, eta 43s
+11/21/2020 23:55:15 [INFO] learner: [Epoch 167] cumulative loss = 0.246460, (took 50s)
+Epoch 168, eta 46s
+11/21/2020 23:56:08 [INFO] learner: [Epoch 168] cumulative loss = 0.309483, (took 53s)
+Epoch 169, eta 54s
+11/21/2020 23:57:01 [INFO] learner: [Epoch 169] cumulative loss = 0.190340, (took 53s)
+Epoch 170, eta 36s
+11/21/2020 23:57:52 [INFO] learner: [Epoch 170] cumulative loss = 0.265347, (took 51s)
+Epoch 171, eta 47s
+11/21/2020 23:57:57 [INFO] learner: begin validation
+11/22/2020 00:00:35 [INFO] evaluation: corpus level bleu: 0.749015
+11/22/2020 00:00:35 [INFO] evaluation: sentence level bleu: 0.751780
+11/22/2020 00:00:35 [INFO] evaluation: accuracy: 0.136364
+11/22/2020 00:00:35 [INFO] evaluation: oracle bleu: 0.812941
+11/22/2020 00:00:35 [INFO] evaluation: oracle accuracy: 0.181818
+11/22/2020 00:00:35 [INFO] learner: avg. example bleu: 0.751780
+11/22/2020 00:00:35 [INFO] learner: accuracy: 0.136364
+11/22/2020 00:00:35 [INFO] learner: hitting patience_counter: 10
+11/22/2020 00:00:35 [INFO] learner: Early Stop!
+11/22/2020 00:00:35 [INFO] learner: [Epoch 171] cumulative loss = 0.202331, (took 162s)
+11/22/2020 00:00:35 [INFO] learner: training finished, save the best model
+11/22/2020 00:00:35 [INFO] learner: save the best model by accuracy
+11/22/2020 00:00:36 [INFO] learner: save the best model by bleu
+/usr/local/lib/python2.7/dist-packages/theano/gpuarray/dnn.py:184: UserWarning: Your cuDNN version is more recent than Theano. If you encounter problems, try updating Theano or downgrading cuDNN to a version >= v5 and <= v7.
+  warnings.warn("Your cuDNN version is more recent than "
+Using cuDNN version 7605 on context None
+Mapped name None to device cuda0: Tesla T4 (0000:00:04.0)
+11/22/2020 00:00:43 [INFO] generic_utils: init logging file [runs/parser.log]
+11/22/2020 00:00:43 [INFO] code_gen: command line: code_gen.py -data_type hs -data data/hs.freq3.pre_suf.unary_closure.bin -output_dir runs -model runs/model.best_bleu.npz -batch_size 10 -max_epoch 200 -valid_per_batch 280 -save_per_batch 280 -decode_max_time_step 350 -optimizer adadelta -rule_embed_dim 128 -node_embed_dim 64 -valid_metric bleu decode -saveto runs/model.best_bleu.npz.decode_results.test.bin
+11/22/2020 00:00:43 [INFO] code_gen: loading dataset [data/hs.freq3.pre_suf.unary_closure.bin]
+11/22/2020 00:00:45 [INFO] code_gen: current config: Namespace(attention_hidden_dim=50, batch_size=10, beam_size=15, clip_grad=0.0, data='data/hs.freq3.pre_suf.unary_closure.bin', data_type='hs', decode_max_time_step=350, decoder_hidden_dim=256, dropout=0.2, enable_copy=True, encoder='bilstm', encoder_hidden_dim=256, frontier_node_type_feed=True, head_nt_constraint=True, ifttt_test_split='data/ifff.test_data.gold.id', max_epoch=200, max_query_length=70, model='runs/model.best_bleu.npz', node_embed_dim=64, node_num=57, operation='decode', optimizer='adadelta', output_dir='runs', parent_action_feed=True, parent_hidden_state_feed=True, ptrnet_hidden_dim=50, random_seed=181783, rule_embed_dim=128, rule_num=100, save_per_batch=280, saveto='runs/model.best_bleu.npz.decode_results.test.bin', source_vocab_size=351, target_vocab_size=556, train_patience=10, tree_attention=False, type='test_data', valid_metric='bleu', valid_per_batch=280, word_embed_dim=128)
+11/22/2020 00:00:45 [INFO] code_gen: avg_action_num: 141
+11/22/2020 00:00:45 [INFO] code_gen: grammar rule num.: 100
+11/22/2020 00:00:45 [INFO] code_gen: grammar node type num.: 57
+11/22/2020 00:00:45 [INFO] code_gen: source vocab size: 351
+11/22/2020 00:00:45 [INFO] code_gen: target vocab size: 556
+11/22/2020 00:00:46 [INFO] recurrent: applying dropout with p = 0.200000
+11/22/2020 00:00:46 [INFO] recurrent: applying dropout with p = 0.200000
+11/22/2020 00:00:47 [INFO] components: applying dropout with p = 0.200000
+/usr/local/lib/python2.7/dist-packages/theano/gradient.py:589: UserWarning: grad method was asked to compute the gradient with respect to a variable that is not part of the computational graph of the cost, or is used only by a non-differentiable operator: decoder_lstm_p4
+  handle_disconnected(elem)
+/usr/local/lib/python2.7/dist-packages/theano/gradient.py:589: UserWarning: grad method was asked to compute the gradient with respect to a variable that is not part of the computational graph of the cost, or is used only by a non-differentiable operator: decoder_lstm_p10
+  handle_disconnected(elem)
+/usr/local/lib/python2.7/dist-packages/theano/gradient.py:589: UserWarning: grad method was asked to compute the gradient with respect to a variable that is not part of the computational graph of the cost, or is used only by a non-differentiable operator: decoder_lstm_p16
+  handle_disconnected(elem)
+/usr/local/lib/python2.7/dist-packages/theano/gradient.py:589: UserWarning: grad method was asked to compute the gradient with respect to a variable that is not part of the computational graph of the cost, or is used only by a non-differentiable operator: decoder_lstm_p22
+  handle_disconnected(elem)
+/usr/local/lib/python2.7/dist-packages/theano/gradient.py:589: UserWarning: grad method was asked to compute the gradient with respect to a variable that is not part of the computational graph of the cost, or is used only by a non-differentiable operator: decoder_lstm_p29
+  handle_disconnected(elem)
+/usr/local/lib/python2.7/dist-packages/theano/gradient.py:589: UserWarning: grad method was asked to compute the gradient with respect to a variable that is not part of the computational graph of the cost, or is used only by a non-differentiable operator: decoder_lstm_p30
+  handle_disconnected(elem)
+/usr/local/lib/python2.7/dist-packages/theano/gradient.py:589: UserWarning: grad method was asked to compute the gradient with respect to a variable that is not part of the computational graph of the cost, or is used only by a non-differentiable operator: decoder_lstm_p31
+  handle_disconnected(elem)
+/usr/local/lib/python2.7/dist-packages/theano/gradient.py:589: UserWarning: grad method was asked to compute the gradient with respect to a variable that is not part of the computational graph of the cost, or is used only by a non-differentiable operator: decoder_lstm_p32
+  handle_disconnected(elem)
+/usr/local/lib/python2.7/dist-packages/theano/gradient.py:589: UserWarning: grad method was asked to compute the gradient with respect to a variable that is not part of the computational graph of the cost, or is used only by a non-differentiable operator: decoder_lstm_p33
+  handle_disconnected(elem)
+/usr/local/lib/python2.7/dist-packages/theano/gradient.py:615: UserWarning: grad method was asked to compute the gradient with respect to a variable that is not part of the computational graph of the cost, or is used only by a non-differentiable operator: <DisconnectedType>
+  handle_disconnected(rval[i])
+11/22/2020 00:01:51 [INFO] model: building decoder ...
+11/22/2020 00:01:51 [INFO] recurrent: applying dropout with p = 0.200000
+11/22/2020 00:01:51 [INFO] recurrent: applying dropout with p = 0.200000
+11/22/2020 00:01:51 [INFO] components: applying dropout with p = 0.200000
+11/22/2020 00:01:56 [INFO] model: load model from [runs/model.best_bleu.npz]
+11/22/2020 00:01:56 [INFO] model: loading parameter [query_embed_p0]
+11/22/2020 00:01:56 [INFO] model: loading parameter [query_encoder_lstm_foward_lstm_p0]
+11/22/2020 00:01:56 [INFO] model: loading parameter [query_encoder_lstm_foward_lstm_p1]
+11/22/2020 00:01:56 [INFO] model: loading parameter [query_encoder_lstm_foward_lstm_p2]
+11/22/2020 00:01:56 [INFO] model: loading parameter [query_encoder_lstm_foward_lstm_p3]
+11/22/2020 00:01:56 [INFO] model: loading parameter [query_encoder_lstm_foward_lstm_p4]
+11/22/2020 00:01:56 [INFO] model: loading parameter [query_encoder_lstm_foward_lstm_p5]
+11/22/2020 00:01:56 [INFO] model: loading parameter [query_encoder_lstm_foward_lstm_p6]
+11/22/2020 00:01:56 [INFO] model: loading parameter [query_encoder_lstm_foward_lstm_p7]
+11/22/2020 00:01:56 [INFO] model: loading parameter [query_encoder_lstm_foward_lstm_p8]
+11/22/2020 00:01:56 [INFO] model: loading parameter [query_encoder_lstm_foward_lstm_p9]
+11/22/2020 00:01:56 [INFO] model: loading parameter [query_encoder_lstm_foward_lstm_p10]
+11/22/2020 00:01:56 [INFO] model: loading parameter [query_encoder_lstm_foward_lstm_p11]
+11/22/2020 00:01:57 [INFO] model: loading parameter [query_encoder_lstm_backward_lstm_p0]
+11/22/2020 00:01:57 [INFO] model: loading parameter [query_encoder_lstm_backward_lstm_p1]
+11/22/2020 00:01:57 [INFO] model: loading parameter [query_encoder_lstm_backward_lstm_p2]
+11/22/2020 00:01:57 [INFO] model: loading parameter [query_encoder_lstm_backward_lstm_p3]
+11/22/2020 00:01:57 [INFO] model: loading parameter [query_encoder_lstm_backward_lstm_p4]
+11/22/2020 00:01:57 [INFO] model: loading parameter [query_encoder_lstm_backward_lstm_p5]
+11/22/2020 00:01:57 [INFO] model: loading parameter [query_encoder_lstm_backward_lstm_p6]
+11/22/2020 00:01:57 [INFO] model: loading parameter [query_encoder_lstm_backward_lstm_p7]
+11/22/2020 00:01:57 [INFO] model: loading parameter [query_encoder_lstm_backward_lstm_p8]
+11/22/2020 00:01:57 [INFO] model: loading parameter [query_encoder_lstm_backward_lstm_p9]
+11/22/2020 00:01:57 [INFO] model: loading parameter [query_encoder_lstm_backward_lstm_p10]
+11/22/2020 00:01:57 [INFO] model: loading parameter [query_encoder_lstm_backward_lstm_p11]
+11/22/2020 00:01:57 [INFO] model: loading parameter [decoder_lstm_p0]
+11/22/2020 00:01:57 [INFO] model: loading parameter [decoder_lstm_p1]
+11/22/2020 00:01:57 [INFO] model: loading parameter [decoder_lstm_p2]
+11/22/2020 00:01:57 [INFO] model: loading parameter [decoder_lstm_p3]
+11/22/2020 00:01:57 [INFO] model: loading parameter [decoder_lstm_p4]
+11/22/2020 00:01:57 [INFO] model: loading parameter [decoder_lstm_p5]
+11/22/2020 00:01:57 [INFO] model: loading parameter [decoder_lstm_p6]
+11/22/2020 00:01:57 [INFO] model: loading parameter [decoder_lstm_p7]
+11/22/2020 00:01:57 [INFO] model: loading parameter [decoder_lstm_p8]
+11/22/2020 00:01:57 [INFO] model: loading parameter [decoder_lstm_p9]
+11/22/2020 00:01:57 [INFO] model: loading parameter [decoder_lstm_p10]
+11/22/2020 00:01:57 [INFO] model: loading parameter [decoder_lstm_p11]
+11/22/2020 00:01:57 [INFO] model: loading parameter [decoder_lstm_p12]
+11/22/2020 00:01:57 [INFO] model: loading parameter [decoder_lstm_p13]
+11/22/2020 00:01:57 [INFO] model: loading parameter [decoder_lstm_p14]
+11/22/2020 00:01:57 [INFO] model: loading parameter [decoder_lstm_p15]
+11/22/2020 00:01:57 [INFO] model: loading parameter [decoder_lstm_p16]
+11/22/2020 00:01:57 [INFO] model: loading parameter [decoder_lstm_p17]
+11/22/2020 00:01:57 [INFO] model: loading parameter [decoder_lstm_p18]
+11/22/2020 00:01:57 [INFO] model: loading parameter [decoder_lstm_p19]
+11/22/2020 00:01:57 [INFO] model: loading parameter [decoder_lstm_p20]
+11/22/2020 00:01:57 [INFO] model: loading parameter [decoder_lstm_p21]
+11/22/2020 00:01:57 [INFO] model: loading parameter [decoder_lstm_p22]
+11/22/2020 00:01:57 [INFO] model: loading parameter [decoder_lstm_p23]
+11/22/2020 00:01:57 [INFO] model: loading parameter [decoder_lstm_p24]
+11/22/2020 00:01:57 [INFO] model: loading parameter [decoder_lstm_p25]
+11/22/2020 00:01:57 [INFO] model: loading parameter [decoder_lstm_p26]
+11/22/2020 00:01:57 [INFO] model: loading parameter [decoder_lstm_p27]
+11/22/2020 00:01:57 [INFO] model: loading parameter [decoder_lstm_p28]
+11/22/2020 00:01:57 [INFO] model: loading parameter [decoder_lstm_p29]
+11/22/2020 00:01:57 [INFO] model: loading parameter [decoder_lstm_p30]
+11/22/2020 00:01:57 [INFO] model: loading parameter [decoder_lstm_p31]
+11/22/2020 00:01:57 [INFO] model: loading parameter [decoder_lstm_p32]
+11/22/2020 00:01:57 [INFO] model: loading parameter [decoder_lstm_p33]
+11/22/2020 00:01:57 [INFO] model: loading parameter [PointerNet_Dense1_input_W]
+11/22/2020 00:01:57 [INFO] model: loading parameter [PointerNet_Dense1_input_b]
+11/22/2020 00:01:57 [INFO] model: loading parameter [PointerNet_Dense1_h_W]
+11/22/2020 00:01:57 [INFO] model: loading parameter [PointerNet_Dense1_h_b]
+11/22/2020 00:01:57 [INFO] model: loading parameter [PointerNet_Dense2_W]
+11/22/2020 00:01:57 [INFO] model: loading parameter [PointerNet_Dense2_b]
+11/22/2020 00:01:57 [INFO] model: loading parameter [terminal_gen_softmax_W]
+11/22/2020 00:01:57 [INFO] model: loading parameter [terminal_gen_softmax_b]
+11/22/2020 00:01:57 [INFO] model: loading parameter [rule_embedding_W]
+11/22/2020 00:01:57 [INFO] model: loading parameter [rule_embedding_b]
+11/22/2020 00:01:57 [INFO] model: loading parameter [node_embed]
+11/22/2020 00:01:57 [INFO] model: loading parameter [vocab_embedding_W]
+11/22/2020 00:01:57 [INFO] model: loading parameter [vocab_embedding_b]
+11/22/2020 00:01:57 [INFO] model: loading parameter [decoder_hidden_state_W_rule_W]
+11/22/2020 00:01:57 [INFO] model: loading parameter [decoder_hidden_state_W_rule_b]
+11/22/2020 00:01:57 [INFO] model: loading parameter [decoder_hidden_state_W_token_W]
+11/22/2020 00:01:57 [INFO] model: loading parameter [decoder_hidden_state_W_token_b]
+11/22/2020 00:01:57 [INFO] decoder: decoding [hs.test_data] set, num. examples: 66
+Exception in converting tree to code:
+------------------------------------------------------------
+raw_id: 604, beam pos: 8
+Traceback (most recent call last):
+  File "/content/NL2code/decoder.py", line 20, in decode_python_dataset
+    ast_tree = decode_tree_to_python_ast(cand.tree)
+  File "/content/NL2code/lang/py/parse.py", line 157, in decode_tree_to_python_ast
+    terminal.value = terminal.type(terminal.value)
+ValueError: invalid literal for int() with base 10: 'Damage'
+------------------------------------------------------------
+Exception in converting tree to code:
+------------------------------------------------------------
+raw_id: 605, beam pos: 2
+Traceback (most recent call last):
+  File "/content/NL2code/decoder.py", line 20, in decode_python_dataset
+    ast_tree = decode_tree_to_python_ast(cand.tree)
+  File "/content/NL2code/lang/py/parse.py", line 157, in decode_tree_to_python_ast
+    terminal.value = terminal.type(terminal.value)
+ValueError: invalid literal for int() with base 10: 'Mana'
+------------------------------------------------------------
+Exception in converting tree to code:
+------------------------------------------------------------
+raw_id: 605, beam pos: 8
+Traceback (most recent call last):
+  File "/content/NL2code/decoder.py", line 20, in decode_python_dataset
+    ast_tree = decode_tree_to_python_ast(cand.tree)
+  File "/content/NL2code/lang/py/parse.py", line 157, in decode_tree_to_python_ast
+    terminal.value = terminal.type(terminal.value)
+ValueError: invalid literal for int() with base 10: 'Mana'
+------------------------------------------------------------
+Exception in converting tree to code:
+------------------------------------------------------------
+raw_id: 605, beam pos: 9
+Traceback (most recent call last):
+  File "/content/NL2code/decoder.py", line 20, in decode_python_dataset
+    ast_tree = decode_tree_to_python_ast(cand.tree)
+  File "/content/NL2code/lang/py/parse.py", line 157, in decode_tree_to_python_ast
+    terminal.value = terminal.type(terminal.value)
+ValueError: invalid literal for int() with base 10: 'Mana'
+------------------------------------------------------------
+Exception in converting tree to code:
+------------------------------------------------------------
+raw_id: 606, beam pos: 6
+Traceback (most recent call last):
+  File "/content/NL2code/decoder.py", line 20, in decode_python_dataset
+    ast_tree = decode_tree_to_python_ast(cand.tree)
+  File "/content/NL2code/lang/py/parse.py", line 157, in decode_tree_to_python_ast
+    terminal.value = terminal.type(terminal.value)
+ValueError: invalid literal for int() with base 10: 'ATK_END'
+------------------------------------------------------------
+Exception in converting tree to code:
+------------------------------------------------------------
+raw_id: 606, beam pos: 7
+Traceback (most recent call last):
+  File "/content/NL2code/decoder.py", line 20, in decode_python_dataset
+    ast_tree = decode_tree_to_python_ast(cand.tree)
+  File "/content/NL2code/lang/py/parse.py", line 157, in decode_tree_to_python_ast
+    terminal.value = terminal.type(terminal.value)
+ValueError: invalid literal for int() with base 10: 'ATK_END'
+------------------------------------------------------------
+Exception in converting tree to code:
+------------------------------------------------------------
+raw_id: 614, beam pos: 7
+Traceback (most recent call last):
+  File "/content/NL2code/decoder.py", line 20, in decode_python_dataset
+    ast_tree = decode_tree_to_python_ast(cand.tree)
+  File "/content/NL2code/lang/py/parse.py", line 157, in decode_tree_to_python_ast
+    terminal.value = terminal.type(terminal.value)
+ValueError: invalid literal for int() with base 10: 'Mana'
+------------------------------------------------------------
+Exception in converting tree to code:
+------------------------------------------------------------
+raw_id: 615, beam pos: 1
+Traceback (most recent call last):
+  File "/content/NL2code/decoder.py", line 20, in decode_python_dataset
+    ast_tree = decode_tree_to_python_ast(cand.tree)
+  File "/content/NL2code/lang/py/parse.py", line 157, in decode_tree_to_python_ast
+    terminal.value = terminal.type(terminal.value)
+ValueError: invalid literal for int() with base 10: 'Shield'
+------------------------------------------------------------
+Exception in converting tree to code:
+------------------------------------------------------------
+raw_id: 615, beam pos: 3
+Traceback (most recent call last):
+  File "/content/NL2code/decoder.py", line 20, in decode_python_dataset
+    ast_tree = decode_tree_to_python_ast(cand.tree)
+  File "/content/NL2code/lang/py/parse.py", line 157, in decode_tree_to_python_ast
+    terminal.value = terminal.type(terminal.value)
+ValueError: invalid literal for int() with base 10: 'Shield'
+------------------------------------------------------------
+Exception in converting tree to code:
+------------------------------------------------------------
+raw_id: 615, beam pos: 5
+Traceback (most recent call last):
+  File "/content/NL2code/decoder.py", line 20, in decode_python_dataset
+    ast_tree = decode_tree_to_python_ast(cand.tree)
+  File "/content/NL2code/lang/py/parse.py", line 157, in decode_tree_to_python_ast
+    terminal.value = terminal.type(terminal.value)
+ValueError: invalid literal for int() with base 10: 'Shield'
+------------------------------------------------------------
+Exception in converting tree to code:
+------------------------------------------------------------
+raw_id: 615, beam pos: 6
+Traceback (most recent call last):
+  File "/content/NL2code/decoder.py", line 20, in decode_python_dataset
+    ast_tree = decode_tree_to_python_ast(cand.tree)
+  File "/content/NL2code/lang/py/parse.py", line 157, in decode_tree_to_python_ast
+    terminal.value = terminal.type(terminal.value)
+ValueError: invalid literal for int() with base 10: 'Shield'
+------------------------------------------------------------
+Exception in converting tree to code:
+------------------------------------------------------------
+raw_id: 615, beam pos: 8
+Traceback (most recent call last):
+  File "/content/NL2code/decoder.py", line 20, in decode_python_dataset
+    ast_tree = decode_tree_to_python_ast(cand.tree)
+  File "/content/NL2code/lang/py/parse.py", line 157, in decode_tree_to_python_ast
+    terminal.value = terminal.type(terminal.value)
+ValueError: invalid literal for int() with base 10: 'Shield'
+------------------------------------------------------------
+Exception in converting tree to code:
+------------------------------------------------------------
+raw_id: 634, beam pos: 6
+Traceback (most recent call last):
+  File "/content/NL2code/decoder.py", line 20, in decode_python_dataset
+    ast_tree = decode_tree_to_python_ast(cand.tree)
+  File "/content/NL2code/lang/py/parse.py", line 157, in decode_tree_to_python_ast
+    terminal.value = terminal.type(terminal.value)
+ValueError: invalid literal for int() with base 10: 'Mana'
+------------------------------------------------------------
+Exception in converting tree to code:
+------------------------------------------------------------
+raw_id: 634, beam pos: 8
+Traceback (most recent call last):
+  File "/content/NL2code/decoder.py", line 20, in decode_python_dataset
+    ast_tree = decode_tree_to_python_ast(cand.tree)
+  File "/content/NL2code/lang/py/parse.py", line 157, in decode_tree_to_python_ast
+    terminal.value = terminal.type(terminal.value)
+ValueError: invalid literal for int() with base 10: ''
+------------------------------------------------------------
+Exception in converting tree to code:
+------------------------------------------------------------
+raw_id: 641, beam pos: 6
+Traceback (most recent call last):
+  File "/content/NL2code/decoder.py", line 20, in decode_python_dataset
+    ast_tree = decode_tree_to_python_ast(cand.tree)
+  File "/content/NL2code/lang/py/parse.py", line 157, in decode_tree_to_python_ast
+    terminal.value = terminal.type(terminal.value)
+ValueError: invalid literal for int() with base 10: 'Change'
+------------------------------------------------------------
+50 examples so far ...
+Exception in converting tree to code:
+------------------------------------------------------------
+raw_id: 650, beam pos: 4
+Traceback (most recent call last):
+  File "/content/NL2code/decoder.py", line 20, in decode_python_dataset
+    ast_tree = decode_tree_to_python_ast(cand.tree)
+  File "/content/NL2code/lang/py/parse.py", line 157, in decode_tree_to_python_ast
+    terminal.value = terminal.type(terminal.value)
+ValueError: invalid literal for int() with base 10: 'character'
+------------------------------------------------------------
+Exception in converting tree to code:
+------------------------------------------------------------
+raw_id: 650, beam pos: 7
+Traceback (most recent call last):
+  File "/content/NL2code/decoder.py", line 20, in decode_python_dataset
+    ast_tree = decode_tree_to_python_ast(cand.tree)
+  File "/content/NL2code/lang/py/parse.py", line 157, in decode_tree_to_python_ast
+    terminal.value = terminal.type(terminal.value)
+ValueError: invalid literal for int() with base 10: 'character'
+------------------------------------------------------------
+Exception in converting tree to code:
+------------------------------------------------------------
+raw_id: 661, beam pos: 1
+Traceback (most recent call last):
+  File "/content/NL2code/decoder.py", line 20, in decode_python_dataset
+    ast_tree = decode_tree_to_python_ast(cand.tree)
+  File "/content/NL2code/lang/py/parse.py", line 157, in decode_tree_to_python_ast
+    terminal.value = terminal.type(terminal.value)
+ValueError: invalid literal for int() with base 10: 'Whelp'
+------------------------------------------------------------
+Exception in converting tree to code:
+------------------------------------------------------------
+raw_id: 661, beam pos: 6
+Traceback (most recent call last):
+  File "/content/NL2code/decoder.py", line 20, in decode_python_dataset
+    ast_tree = decode_tree_to_python_ast(cand.tree)
+  File "/content/NL2code/lang/py/parse.py", line 157, in decode_tree_to_python_ast
+    terminal.value = terminal.type(terminal.value)
+ValueError: invalid literal for int() with base 10: 'Whelp'
+------------------------------------------------------------
+Exception in converting tree to code:
+------------------------------------------------------------
+raw_id: 661, beam pos: 9
+Traceback (most recent call last):
+  File "/content/NL2code/decoder.py", line 20, in decode_python_dataset
+    ast_tree = decode_tree_to_python_ast(cand.tree)
+  File "/content/NL2code/lang/py/parse.py", line 157, in decode_tree_to_python_ast
+    terminal.value = terminal.type(terminal.value)
+ValueError: invalid literal for int() with base 10: 'Whelp'
+------------------------------------------------------------
+11/22/2020 00:04:12 [INFO] generic_utils: init logging file [runs/parser.log]
+11/22/2020 00:04:12 [INFO] code_gen: command line: code_gen.py -data_type hs -data data/hs.freq3.pre_suf.unary_closure.bin -output_dir runs evaluate -input runs/model.best_bleu.npz.decode_results.test.bin
+11/22/2020 00:04:12 [INFO] code_gen: loading dataset [data/hs.freq3.pre_suf.unary_closure.bin]
+11/22/2020 00:04:14 [INFO] code_gen: current config: Namespace(attention_hidden_dim=50, batch_size=10, beam_size=15, clip_grad=0.0, data='data/hs.freq3.pre_suf.unary_closure.bin', data_type='hs', decode_max_time_step=100, decoder_hidden_dim=256, dropout=0.2, enable_copy=True, encoder='bilstm', encoder_hidden_dim=256, frontier_node_type_feed=True, head_nt_constraint=True, ifttt_test_split='data/ifff.test_data.gold.id', input='runs/model.best_bleu.npz.decode_results.test.bin', is_nbest=False, max_epoch=50, max_query_length=70, mode='self', model=None, node_embed_dim=256, node_num=57, operation='evaluate', optimizer='adam', output_dir='runs', parent_action_feed=True, parent_hidden_state_feed=True, ptrnet_hidden_dim=50, random_seed=181783, rule_embed_dim=256, rule_num=100, save_per_batch=4000, seq2seq_decode_file=None, seq2seq_ref_file=None, seq2tree_id_file='test.id.txt', seq2tree_rareword_map=None, seq2tree_sample_file='model.sample', source_vocab_size=351, target_vocab_size=556, train_patience=10, tree_attention=False, type='test_data', valid_metric='bleu', valid_per_batch=4000, word_embed_dim=128)
+11/22/2020 00:04:14 [INFO] code_gen: avg_action_num: 141
+11/22/2020 00:04:14 [INFO] code_gen: grammar rule num.: 100
+11/22/2020 00:04:14 [INFO] code_gen: grammar node type num.: 57
+11/22/2020 00:04:14 [INFO] code_gen: source vocab size: 351
+11/22/2020 00:04:14 [INFO] code_gen: target vocab size: 556
+11/22/2020 00:04:16 [INFO] evaluation: evaluating [hs.test_data] set, [66] examples
+raw_id: 599, bleu_score: 0.949695
+raw_id: 600, bleu_score: 1.000000
+raw_id: 601, bleu_score: 0.865913
+raw_id: 602, bleu_score: 0.899117
+raw_id: 603, bleu_score: 0.774980
+raw_id: 604, bleu_score: 0.505860
+raw_id: 605, bleu_score: 0.739844
+raw_id: 606, bleu_score: 0.878892
+raw_id: 607, bleu_score: 0.542162
+raw_id: 608, bleu_score: 0.626162
+raw_id: 609, bleu_score: 1.000000
+raw_id: 610, bleu_score: 1.000000
+raw_id: 611, bleu_score: 1.000000
+raw_id: 612, bleu_score: 0.869714
+raw_id: 613, bleu_score: 1.000000
+raw_id: 614, bleu_score: 0.614394
+raw_id: 615, bleu_score: 0.930532
+raw_id: 616, bleu_score: 0.970835
+raw_id: 617, bleu_score: 0.623387
+raw_id: 618, bleu_score: 0.559937
+raw_id: 619, bleu_score: 0.720142
+raw_id: 620, bleu_score: 0.582498
+raw_id: 621, bleu_score: 0.773603
+raw_id: 622, bleu_score: 0.967412
+raw_id: 623, bleu_score: 0.616231
+raw_id: 624, bleu_score: 0.875216
+raw_id: 625, bleu_score: 0.844132
+raw_id: 626, bleu_score: 0.871383
+raw_id: 627, bleu_score: 0.534612
+raw_id: 628, bleu_score: 0.872857
+raw_id: 629, bleu_score: 0.892040
+raw_id: 630, bleu_score: 1.000000
+raw_id: 631, bleu_score: 0.671093
+raw_id: 632, bleu_score: 0.760932
+raw_id: 633, bleu_score: 0.747878
+raw_id: 634, bleu_score: 0.873430
+raw_id: 635, bleu_score: 0.631466
+raw_id: 636, bleu_score: 0.687351
+raw_id: 637, bleu_score: 0.423304
+raw_id: 638, bleu_score: 0.708626
+raw_id: 639, bleu_score: 0.900149
+raw_id: 640, bleu_score: 0.860063
+raw_id: 641, bleu_score: 0.955119
+raw_id: 642, bleu_score: 0.543254
+raw_id: 643, bleu_score: 0.884243
+raw_id: 644, bleu_score: 0.932942
+raw_id: 645, bleu_score: 0.455833
+raw_id: 646, bleu_score: 1.000000
+raw_id: 647, bleu_score: 0.666681
+raw_id: 648, bleu_score: 0.893575
+raw_id: 649, bleu_score: 0.859132
+raw_id: 650, bleu_score: 0.187703
+raw_id: 651, bleu_score: 0.668299
+raw_id: 652, bleu_score: 0.681255
+raw_id: 653, bleu_score: 0.551165
+raw_id: 654, bleu_score: 0.437886
+raw_id: 655, bleu_score: 0.762917
+raw_id: 656, bleu_score: 0.047206
+raw_id: 657, bleu_score: 0.903946
+raw_id: 658, bleu_score: 1.000000
+raw_id: 659, bleu_score: 0.506664
+raw_id: 660, bleu_score: 0.873782
+raw_id: 661, bleu_score: 0.935076
+raw_id: 662, bleu_score: 0.881937
+raw_id: 663, bleu_score: 0.652594
+raw_id: 664, bleu_score: 0.792739
+11/22/2020 00:04:17 [INFO] evaluation: corpus level bleu: 0.733161
+11/22/2020 00:04:17 [INFO] evaluation: sentence level bleu: 0.761209
+11/22/2020 00:04:17 [INFO] evaluation: accuracy: 0.121212
+11/22/2020 00:04:17 [INFO] evaluation: oracle bleu: 0.810814
+11/22/2020 00:04:17 [INFO] evaluation: oracle accuracy: 0.242424
+/usr/local/lib/python2.7/dist-packages/theano/gpuarray/dnn.py:184: UserWarning: Your cuDNN version is more recent than Theano. If you encounter problems, try updating Theano or downgrading cuDNN to a version >= v5 and <= v7.
+  warnings.warn("Your cuDNN version is more recent than "
+Using cuDNN version 7605 on context None
+Mapped name None to device cuda0: Tesla T4 (0000:00:04.0)
+11/22/2020 00:04:21 [INFO] generic_utils: init logging file [runs/parser.log]
+11/22/2020 00:04:21 [INFO] code_gen: command line: code_gen.py -data_type hs -data data/hs.freq3.pre_suf.unary_closure.bin -output_dir runs -model runs/model.best_acc.npz -batch_size 10 -max_epoch 200 -valid_per_batch 280 -save_per_batch 280 -decode_max_time_step 350 -optimizer adadelta -rule_embed_dim 128 -node_embed_dim 64 -valid_metric bleu decode -saveto runs/model.best_acc.npz.decode_results.test.bin
+11/22/2020 00:04:21 [INFO] code_gen: loading dataset [data/hs.freq3.pre_suf.unary_closure.bin]
+11/22/2020 00:04:24 [INFO] code_gen: current config: Namespace(attention_hidden_dim=50, batch_size=10, beam_size=15, clip_grad=0.0, data='data/hs.freq3.pre_suf.unary_closure.bin', data_type='hs', decode_max_time_step=350, decoder_hidden_dim=256, dropout=0.2, enable_copy=True, encoder='bilstm', encoder_hidden_dim=256, frontier_node_type_feed=True, head_nt_constraint=True, ifttt_test_split='data/ifff.test_data.gold.id', max_epoch=200, max_query_length=70, model='runs/model.best_acc.npz', node_embed_dim=64, node_num=57, operation='decode', optimizer='adadelta', output_dir='runs', parent_action_feed=True, parent_hidden_state_feed=True, ptrnet_hidden_dim=50, random_seed=181783, rule_embed_dim=128, rule_num=100, save_per_batch=280, saveto='runs/model.best_acc.npz.decode_results.test.bin', source_vocab_size=351, target_vocab_size=556, train_patience=10, tree_attention=False, type='test_data', valid_metric='bleu', valid_per_batch=280, word_embed_dim=128)
+11/22/2020 00:04:24 [INFO] code_gen: avg_action_num: 141
+11/22/2020 00:04:24 [INFO] code_gen: grammar rule num.: 100
+11/22/2020 00:04:24 [INFO] code_gen: grammar node type num.: 57
+11/22/2020 00:04:24 [INFO] code_gen: source vocab size: 351
+11/22/2020 00:04:24 [INFO] code_gen: target vocab size: 556
+11/22/2020 00:04:24 [INFO] recurrent: applying dropout with p = 0.200000
+11/22/2020 00:04:25 [INFO] recurrent: applying dropout with p = 0.200000
+11/22/2020 00:04:25 [INFO] components: applying dropout with p = 0.200000
+/usr/local/lib/python2.7/dist-packages/theano/gradient.py:589: UserWarning: grad method was asked to compute the gradient with respect to a variable that is not part of the computational graph of the cost, or is used only by a non-differentiable operator: decoder_lstm_p4
+  handle_disconnected(elem)
+/usr/local/lib/python2.7/dist-packages/theano/gradient.py:589: UserWarning: grad method was asked to compute the gradient with respect to a variable that is not part of the computational graph of the cost, or is used only by a non-differentiable operator: decoder_lstm_p10
+  handle_disconnected(elem)
+/usr/local/lib/python2.7/dist-packages/theano/gradient.py:589: UserWarning: grad method was asked to compute the gradient with respect to a variable that is not part of the computational graph of the cost, or is used only by a non-differentiable operator: decoder_lstm_p16
+  handle_disconnected(elem)
+/usr/local/lib/python2.7/dist-packages/theano/gradient.py:589: UserWarning: grad method was asked to compute the gradient with respect to a variable that is not part of the computational graph of the cost, or is used only by a non-differentiable operator: decoder_lstm_p22
+  handle_disconnected(elem)
+/usr/local/lib/python2.7/dist-packages/theano/gradient.py:589: UserWarning: grad method was asked to compute the gradient with respect to a variable that is not part of the computational graph of the cost, or is used only by a non-differentiable operator: decoder_lstm_p29
+  handle_disconnected(elem)
+/usr/local/lib/python2.7/dist-packages/theano/gradient.py:589: UserWarning: grad method was asked to compute the gradient with respect to a variable that is not part of the computational graph of the cost, or is used only by a non-differentiable operator: decoder_lstm_p30
+  handle_disconnected(elem)
+/usr/local/lib/python2.7/dist-packages/theano/gradient.py:589: UserWarning: grad method was asked to compute the gradient with respect to a variable that is not part of the computational graph of the cost, or is used only by a non-differentiable operator: decoder_lstm_p31
+  handle_disconnected(elem)
+/usr/local/lib/python2.7/dist-packages/theano/gradient.py:589: UserWarning: grad method was asked to compute the gradient with respect to a variable that is not part of the computational graph of the cost, or is used only by a non-differentiable operator: decoder_lstm_p32
+  handle_disconnected(elem)
+/usr/local/lib/python2.7/dist-packages/theano/gradient.py:589: UserWarning: grad method was asked to compute the gradient with respect to a variable that is not part of the computational graph of the cost, or is used only by a non-differentiable operator: decoder_lstm_p33
+  handle_disconnected(elem)
+/usr/local/lib/python2.7/dist-packages/theano/gradient.py:615: UserWarning: grad method was asked to compute the gradient with respect to a variable that is not part of the computational graph of the cost, or is used only by a non-differentiable operator: <DisconnectedType>
+  handle_disconnected(rval[i])
+11/22/2020 00:05:30 [INFO] model: building decoder ...
+11/22/2020 00:05:30 [INFO] recurrent: applying dropout with p = 0.200000
+11/22/2020 00:05:30 [INFO] recurrent: applying dropout with p = 0.200000
+11/22/2020 00:05:30 [INFO] components: applying dropout with p = 0.200000
+11/22/2020 00:05:35 [INFO] model: load model from [runs/model.best_acc.npz]
+11/22/2020 00:05:35 [INFO] model: loading parameter [query_embed_p0]
+11/22/2020 00:05:35 [INFO] model: loading parameter [query_encoder_lstm_foward_lstm_p0]
+11/22/2020 00:05:35 [INFO] model: loading parameter [query_encoder_lstm_foward_lstm_p1]
+11/22/2020 00:05:35 [INFO] model: loading parameter [query_encoder_lstm_foward_lstm_p2]
+11/22/2020 00:05:35 [INFO] model: loading parameter [query_encoder_lstm_foward_lstm_p3]
+11/22/2020 00:05:35 [INFO] model: loading parameter [query_encoder_lstm_foward_lstm_p4]
+11/22/2020 00:05:35 [INFO] model: loading parameter [query_encoder_lstm_foward_lstm_p5]
+11/22/2020 00:05:35 [INFO] model: loading parameter [query_encoder_lstm_foward_lstm_p6]
+11/22/2020 00:05:35 [INFO] model: loading parameter [query_encoder_lstm_foward_lstm_p7]
+11/22/2020 00:05:35 [INFO] model: loading parameter [query_encoder_lstm_foward_lstm_p8]
+11/22/2020 00:05:35 [INFO] model: loading parameter [query_encoder_lstm_foward_lstm_p9]
+11/22/2020 00:05:35 [INFO] model: loading parameter [query_encoder_lstm_foward_lstm_p10]
+11/22/2020 00:05:35 [INFO] model: loading parameter [query_encoder_lstm_foward_lstm_p11]
+11/22/2020 00:05:35 [INFO] model: loading parameter [query_encoder_lstm_backward_lstm_p0]
+11/22/2020 00:05:35 [INFO] model: loading parameter [query_encoder_lstm_backward_lstm_p1]
+11/22/2020 00:05:35 [INFO] model: loading parameter [query_encoder_lstm_backward_lstm_p2]
+11/22/2020 00:05:35 [INFO] model: loading parameter [query_encoder_lstm_backward_lstm_p3]
+11/22/2020 00:05:35 [INFO] model: loading parameter [query_encoder_lstm_backward_lstm_p4]
+11/22/2020 00:05:35 [INFO] model: loading parameter [query_encoder_lstm_backward_lstm_p5]
+11/22/2020 00:05:35 [INFO] model: loading parameter [query_encoder_lstm_backward_lstm_p6]
+11/22/2020 00:05:35 [INFO] model: loading parameter [query_encoder_lstm_backward_lstm_p7]
+11/22/2020 00:05:35 [INFO] model: loading parameter [query_encoder_lstm_backward_lstm_p8]
+11/22/2020 00:05:35 [INFO] model: loading parameter [query_encoder_lstm_backward_lstm_p9]
+11/22/2020 00:05:35 [INFO] model: loading parameter [query_encoder_lstm_backward_lstm_p10]
+11/22/2020 00:05:35 [INFO] model: loading parameter [query_encoder_lstm_backward_lstm_p11]
+11/22/2020 00:05:35 [INFO] model: loading parameter [decoder_lstm_p0]
+11/22/2020 00:05:35 [INFO] model: loading parameter [decoder_lstm_p1]
+11/22/2020 00:05:35 [INFO] model: loading parameter [decoder_lstm_p2]
+11/22/2020 00:05:35 [INFO] model: loading parameter [decoder_lstm_p3]
+11/22/2020 00:05:35 [INFO] model: loading parameter [decoder_lstm_p4]
+11/22/2020 00:05:35 [INFO] model: loading parameter [decoder_lstm_p5]
+11/22/2020 00:05:35 [INFO] model: loading parameter [decoder_lstm_p6]
+11/22/2020 00:05:35 [INFO] model: loading parameter [decoder_lstm_p7]
+11/22/2020 00:05:35 [INFO] model: loading parameter [decoder_lstm_p8]
+11/22/2020 00:05:35 [INFO] model: loading parameter [decoder_lstm_p9]
+11/22/2020 00:05:35 [INFO] model: loading parameter [decoder_lstm_p10]
+11/22/2020 00:05:35 [INFO] model: loading parameter [decoder_lstm_p11]
+11/22/2020 00:05:35 [INFO] model: loading parameter [decoder_lstm_p12]
+11/22/2020 00:05:35 [INFO] model: loading parameter [decoder_lstm_p13]
+11/22/2020 00:05:35 [INFO] model: loading parameter [decoder_lstm_p14]
+11/22/2020 00:05:35 [INFO] model: loading parameter [decoder_lstm_p15]
+11/22/2020 00:05:35 [INFO] model: loading parameter [decoder_lstm_p16]
+11/22/2020 00:05:35 [INFO] model: loading parameter [decoder_lstm_p17]
+11/22/2020 00:05:35 [INFO] model: loading parameter [decoder_lstm_p18]
+11/22/2020 00:05:35 [INFO] model: loading parameter [decoder_lstm_p19]
+11/22/2020 00:05:35 [INFO] model: loading parameter [decoder_lstm_p20]
+11/22/2020 00:05:35 [INFO] model: loading parameter [decoder_lstm_p21]
+11/22/2020 00:05:35 [INFO] model: loading parameter [decoder_lstm_p22]
+11/22/2020 00:05:35 [INFO] model: loading parameter [decoder_lstm_p23]
+11/22/2020 00:05:35 [INFO] model: loading parameter [decoder_lstm_p24]
+11/22/2020 00:05:35 [INFO] model: loading parameter [decoder_lstm_p25]
+11/22/2020 00:05:35 [INFO] model: loading parameter [decoder_lstm_p26]
+11/22/2020 00:05:35 [INFO] model: loading parameter [decoder_lstm_p27]
+11/22/2020 00:05:35 [INFO] model: loading parameter [decoder_lstm_p28]
+11/22/2020 00:05:35 [INFO] model: loading parameter [decoder_lstm_p29]
+11/22/2020 00:05:35 [INFO] model: loading parameter [decoder_lstm_p30]
+11/22/2020 00:05:35 [INFO] model: loading parameter [decoder_lstm_p31]
+11/22/2020 00:05:35 [INFO] model: loading parameter [decoder_lstm_p32]
+11/22/2020 00:05:35 [INFO] model: loading parameter [decoder_lstm_p33]
+11/22/2020 00:05:36 [INFO] model: loading parameter [PointerNet_Dense1_input_W]
+11/22/2020 00:05:36 [INFO] model: loading parameter [PointerNet_Dense1_input_b]
+11/22/2020 00:05:36 [INFO] model: loading parameter [PointerNet_Dense1_h_W]
+11/22/2020 00:05:36 [INFO] model: loading parameter [PointerNet_Dense1_h_b]
+11/22/2020 00:05:36 [INFO] model: loading parameter [PointerNet_Dense2_W]
+11/22/2020 00:05:36 [INFO] model: loading parameter [PointerNet_Dense2_b]
+11/22/2020 00:05:36 [INFO] model: loading parameter [terminal_gen_softmax_W]
+11/22/2020 00:05:36 [INFO] model: loading parameter [terminal_gen_softmax_b]
+11/22/2020 00:05:36 [INFO] model: loading parameter [rule_embedding_W]
+11/22/2020 00:05:36 [INFO] model: loading parameter [rule_embedding_b]
+11/22/2020 00:05:36 [INFO] model: loading parameter [node_embed]
+11/22/2020 00:05:36 [INFO] model: loading parameter [vocab_embedding_W]
+11/22/2020 00:05:36 [INFO] model: loading parameter [vocab_embedding_b]
+11/22/2020 00:05:36 [INFO] model: loading parameter [decoder_hidden_state_W_rule_W]
+11/22/2020 00:05:36 [INFO] model: loading parameter [decoder_hidden_state_W_rule_b]
+11/22/2020 00:05:36 [INFO] model: loading parameter [decoder_hidden_state_W_token_W]
+11/22/2020 00:05:36 [INFO] model: loading parameter [decoder_hidden_state_W_token_b]
+11/22/2020 00:05:36 [INFO] decoder: decoding [hs.test_data] set, num. examples: 66
+Exception in converting tree to code:
+------------------------------------------------------------
+raw_id: 605, beam pos: 6
+Traceback (most recent call last):
+  File "/content/NL2code/decoder.py", line 20, in decode_python_dataset
+    ast_tree = decode_tree_to_python_ast(cand.tree)
+  File "/content/NL2code/lang/py/parse.py", line 157, in decode_tree_to_python_ast
+    terminal.value = terminal.type(terminal.value)
+ValueError: invalid literal for int() with base 10: 'Mana'
+------------------------------------------------------------
+Exception in converting tree to code:
+------------------------------------------------------------
+raw_id: 606, beam pos: 5
+Traceback (most recent call last):
+  File "/content/NL2code/decoder.py", line 20, in decode_python_dataset
+    ast_tree = decode_tree_to_python_ast(cand.tree)
+  File "/content/NL2code/lang/py/parse.py", line 157, in decode_tree_to_python_ast
+    terminal.value = terminal.type(terminal.value)
+ValueError: invalid literal for int() with base 10: 'ATK_END'
+------------------------------------------------------------
+Exception in converting tree to code:
+------------------------------------------------------------
+raw_id: 606, beam pos: 8
+Traceback (most recent call last):
+  File "/content/NL2code/decoder.py", line 20, in decode_python_dataset
+    ast_tree = decode_tree_to_python_ast(cand.tree)
+  File "/content/NL2code/lang/py/parse.py", line 157, in decode_tree_to_python_ast
+    terminal.value = terminal.type(terminal.value)
+ValueError: invalid literal for int() with base 10: 'ATK_END'
+------------------------------------------------------------
+Exception in converting tree to code:
+------------------------------------------------------------
+raw_id: 618, beam pos: 0
+Traceback (most recent call last):
+  File "/content/NL2code/decoder.py", line 20, in decode_python_dataset
+    ast_tree = decode_tree_to_python_ast(cand.tree)
+  File "/content/NL2code/lang/py/parse.py", line 157, in decode_tree_to_python_ast
+    terminal.value = terminal.type(terminal.value)
+ValueError: invalid literal for int() with base 10: 'into'
+------------------------------------------------------------
+Exception in converting tree to code:
+------------------------------------------------------------
+raw_id: 618, beam pos: 1
+Traceback (most recent call last):
+  File "/content/NL2code/decoder.py", line 20, in decode_python_dataset
+    ast_tree = decode_tree_to_python_ast(cand.tree)
+  File "/content/NL2code/lang/py/parse.py", line 157, in decode_tree_to_python_ast
+    terminal.value = terminal.type(terminal.value)
+ValueError: invalid literal for int() with base 10: 'into'
+------------------------------------------------------------
+Exception in converting tree to code:
+------------------------------------------------------------
+raw_id: 618, beam pos: 2
+Traceback (most recent call last):
+  File "/content/NL2code/decoder.py", line 20, in decode_python_dataset
+    ast_tree = decode_tree_to_python_ast(cand.tree)
+  File "/content/NL2code/lang/py/parse.py", line 157, in decode_tree_to_python_ast
+    terminal.value = terminal.type(terminal.value)
+ValueError: invalid literal for int() with base 10: 'into'
+------------------------------------------------------------
+Exception in converting tree to code:
+------------------------------------------------------------
+raw_id: 618, beam pos: 3
+Traceback (most recent call last):
+  File "/content/NL2code/decoder.py", line 20, in decode_python_dataset
+    ast_tree = decode_tree_to_python_ast(cand.tree)
+  File "/content/NL2code/lang/py/parse.py", line 157, in decode_tree_to_python_ast
+    terminal.value = terminal.type(terminal.value)
+ValueError: invalid literal for int() with base 10: 'into'
+------------------------------------------------------------
+Exception in converting tree to code:
+------------------------------------------------------------
+raw_id: 618, beam pos: 6
+Traceback (most recent call last):
+  File "/content/NL2code/decoder.py", line 20, in decode_python_dataset
+    ast_tree = decode_tree_to_python_ast(cand.tree)
+  File "/content/NL2code/lang/py/parse.py", line 157, in decode_tree_to_python_ast
+    terminal.value = terminal.type(terminal.value)
+ValueError: invalid literal for int() with base 10: 'into'
+------------------------------------------------------------
+Exception in converting tree to code:
+------------------------------------------------------------
+raw_id: 636, beam pos: 2
+Traceback (most recent call last):
+  File "/content/NL2code/decoder.py", line 20, in decode_python_dataset
+    ast_tree = decode_tree_to_python_ast(cand.tree)
+  File "/content/NL2code/lang/py/parse.py", line 157, in decode_tree_to_python_ast
+    terminal.value = terminal.type(terminal.value)
+ValueError: invalid literal for int() with base 10: 'damage'
+------------------------------------------------------------
+Exception in converting tree to code:
+------------------------------------------------------------
+raw_id: 636, beam pos: 8
+Traceback (most recent call last):
+  File "/content/NL2code/decoder.py", line 20, in decode_python_dataset
+    ast_tree = decode_tree_to_python_ast(cand.tree)
+  File "/content/NL2code/lang/py/parse.py", line 157, in decode_tree_to_python_ast
+    terminal.value = terminal.type(terminal.value)
+ValueError: invalid literal for int() with base 10: 'weapon'
+------------------------------------------------------------
+Exception in converting tree to code:
+------------------------------------------------------------
+raw_id: 641, beam pos: 3
+Traceback (most recent call last):
+  File "/content/NL2code/decoder.py", line 20, in decode_python_dataset
+    ast_tree = decode_tree_to_python_ast(cand.tree)
+  File "/content/NL2code/lang/py/parse.py", line 157, in decode_tree_to_python_ast
+    terminal.value = terminal.type(terminal.value)
+ValueError: invalid literal for int() with base 10: 'Change'
+------------------------------------------------------------
+Exception in converting tree to code:
+------------------------------------------------------------
+raw_id: 641, beam pos: 5
+Traceback (most recent call last):
+  File "/content/NL2code/decoder.py", line 20, in decode_python_dataset
+    ast_tree = decode_tree_to_python_ast(cand.tree)
+  File "/content/NL2code/lang/py/parse.py", line 157, in decode_tree_to_python_ast
+    terminal.value = terminal.type(terminal.value)
+ValueError: invalid literal for int() with base 10: 'picker'
+------------------------------------------------------------
+50 examples so far ...
+Exception in converting tree to code:
+------------------------------------------------------------
+raw_id: 650, beam pos: 9
+Traceback (most recent call last):
+  File "/content/NL2code/decoder.py", line 20, in decode_python_dataset
+    ast_tree = decode_tree_to_python_ast(cand.tree)
+  File "/content/NL2code/lang/py/parse.py", line 157, in decode_tree_to_python_ast
+    terminal.value = terminal.type(terminal.value)
+ValueError: invalid literal for int() with base 10: 'character'
+------------------------------------------------------------
+11/22/2020 00:08:01 [INFO] generic_utils: init logging file [runs/parser.log]
+11/22/2020 00:08:01 [INFO] code_gen: command line: code_gen.py -data_type hs -data data/hs.freq3.pre_suf.unary_closure.bin -output_dir runs evaluate -input runs/model.best_acc.npz.decode_results.test.bin
+11/22/2020 00:08:01 [INFO] code_gen: loading dataset [data/hs.freq3.pre_suf.unary_closure.bin]
+11/22/2020 00:08:03 [INFO] code_gen: current config: Namespace(attention_hidden_dim=50, batch_size=10, beam_size=15, clip_grad=0.0, data='data/hs.freq3.pre_suf.unary_closure.bin', data_type='hs', decode_max_time_step=100, decoder_hidden_dim=256, dropout=0.2, enable_copy=True, encoder='bilstm', encoder_hidden_dim=256, frontier_node_type_feed=True, head_nt_constraint=True, ifttt_test_split='data/ifff.test_data.gold.id', input='runs/model.best_acc.npz.decode_results.test.bin', is_nbest=False, max_epoch=50, max_query_length=70, mode='self', model=None, node_embed_dim=256, node_num=57, operation='evaluate', optimizer='adam', output_dir='runs', parent_action_feed=True, parent_hidden_state_feed=True, ptrnet_hidden_dim=50, random_seed=181783, rule_embed_dim=256, rule_num=100, save_per_batch=4000, seq2seq_decode_file=None, seq2seq_ref_file=None, seq2tree_id_file='test.id.txt', seq2tree_rareword_map=None, seq2tree_sample_file='model.sample', source_vocab_size=351, target_vocab_size=556, train_patience=10, tree_attention=False, type='test_data', valid_metric='bleu', valid_per_batch=4000, word_embed_dim=128)
+11/22/2020 00:08:03 [INFO] code_gen: avg_action_num: 141
+11/22/2020 00:08:03 [INFO] code_gen: grammar rule num.: 100
+11/22/2020 00:08:03 [INFO] code_gen: grammar node type num.: 57
+11/22/2020 00:08:03 [INFO] code_gen: source vocab size: 351
+11/22/2020 00:08:03 [INFO] code_gen: target vocab size: 556
+11/22/2020 00:08:05 [INFO] evaluation: evaluating [hs.test_data] set, [66] examples
+raw_id: 599, bleu_score: 1.000000
+raw_id: 600, bleu_score: 0.968042
+raw_id: 601, bleu_score: 0.786661
+raw_id: 602, bleu_score: 0.949695
+raw_id: 603, bleu_score: 0.794487
+raw_id: 604, bleu_score: 0.505860
+raw_id: 605, bleu_score: 0.641427
+raw_id: 606, bleu_score: 0.947583
+raw_id: 607, bleu_score: 0.449277
+raw_id: 608, bleu_score: 0.615368
+raw_id: 609, bleu_score: 1.000000
+raw_id: 610, bleu_score: 1.000000
+raw_id: 611, bleu_score: 1.000000
+raw_id: 612, bleu_score: 1.000000
+raw_id: 613, bleu_score: 1.000000
+raw_id: 614, bleu_score: 0.581182
+raw_id: 615, bleu_score: 0.904823
+raw_id: 616, bleu_score: 0.970835
+raw_id: 617, bleu_score: 0.621843
+raw_id: 618, bleu_score: 0.596838
+raw_id: 619, bleu_score: 0.698885
+raw_id: 620, bleu_score: 0.582498
+raw_id: 621, bleu_score: 0.773603
+raw_id: 622, bleu_score: 0.934579
+raw_id: 623, bleu_score: 0.638644
+raw_id: 624, bleu_score: 0.893530
+raw_id: 625, bleu_score: 0.844132
+raw_id: 626, bleu_score: 0.871383
+raw_id: 627, bleu_score: 0.456642
+raw_id: 628, bleu_score: 0.872857
+raw_id: 629, bleu_score: 0.835024
+raw_id: 630, bleu_score: 1.000000
+raw_id: 631, bleu_score: 0.727072
+raw_id: 632, bleu_score: 0.618690
+raw_id: 633, bleu_score: 0.756544
+raw_id: 634, bleu_score: 0.843053
+raw_id: 635, bleu_score: 0.631466
+raw_id: 636, bleu_score: 0.515890
+raw_id: 637, bleu_score: 0.417976
+raw_id: 638, bleu_score: 0.796089
+raw_id: 639, bleu_score: 0.900149
+raw_id: 640, bleu_score: 0.817843
+raw_id: 641, bleu_score: 0.955119
+raw_id: 642, bleu_score: 0.477461
+raw_id: 643, bleu_score: 0.884243
+raw_id: 644, bleu_score: 0.932942
+raw_id: 645, bleu_score: 0.436103
+raw_id: 646, bleu_score: 0.953446
+raw_id: 647, bleu_score: 0.666681
+raw_id: 648, bleu_score: 0.969407
+raw_id: 649, bleu_score: 0.869746
+raw_id: 650, bleu_score: 0.143993
+raw_id: 651, bleu_score: 0.444072
+raw_id: 652, bleu_score: 0.582175
+raw_id: 653, bleu_score: 0.179466
+raw_id: 654, bleu_score: 0.437886
+raw_id: 655, bleu_score: 0.779968
+raw_id: 656, bleu_score: 0.047206
+raw_id: 657, bleu_score: 0.871962
+raw_id: 658, bleu_score: 1.000000
+raw_id: 659, bleu_score: 0.391812
+raw_id: 660, bleu_score: 0.880697
+raw_id: 661, bleu_score: 0.935076
+raw_id: 662, bleu_score: 0.919675
+raw_id: 663, bleu_score: 0.652594
+raw_id: 664, bleu_score: 0.777857
+11/22/2020 00:08:06 [INFO] evaluation: corpus level bleu: 0.712950
+11/22/2020 00:08:06 [INFO] evaluation: sentence level bleu: 0.741668
+11/22/2020 00:08:06 [INFO] evaluation: accuracy: 0.121212
+11/22/2020 00:08:06 [INFO] evaluation: oracle bleu: 0.811446
+11/22/2020 00:08:06 [INFO] evaluation: oracle accuracy: 0.257576

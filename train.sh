@@ -12,7 +12,7 @@ else
 fi
 
 echo "batch size : ${batch_size}"
-echo "max epoch size : ${batch_size}"
+echo "max epoch size : ${max_epoch_size}"
 
 if [ "$1" == "hs" ]; then
 	# hs dataset

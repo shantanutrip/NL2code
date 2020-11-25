@@ -113,6 +113,8 @@ parser.add_argument('-ifttt_test_split', default='data/ifff.test_data.gold.id')
 interactive_parser.add_argument('-mode', default='dataset')
 
 if __name__ == '__main__':
+    import data_storage
+    data_storage.init()
     args = parser.parse_args()
 
     if not os.path.exists(args.output_dir):

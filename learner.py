@@ -10,6 +10,7 @@ import decoder
 import evaluation
 from dataset import *
 import config
+import data_storage 
 
 
 class Learner(object):
@@ -39,6 +40,7 @@ class Learner(object):
         history_valid_perf = []
         history_valid_bleu = []
         history_valid_acc = []
+        cum_loss_list = []
         best_model_params = best_model_by_acc = best_model_by_bleu = None
 
         # train_data_iter = DataIterator(self.train_data, batch_size)
@@ -146,12 +148,21 @@ class Learner(object):
                          epoch,
                          loss / cum_nb_examples,
                          time.time() - begin_time)
+            
+            cum_loss_list.append(loss / cum_nb_examples)
 
             if early_stop:
                 break
 
-        logging.info('training finished, save the best model')
-        np.savez(os.path.join(config.output_dir, 'model.npz'), **best_model_params)
+        try:
+            logging.info('training finished, save the best model')
+            np.savez(os.path.join(config.output_dir, 'model.npz'), **best_model_params)
+        except:
+            logging.info('Number of epochs was less. No model could be saved.')
+
+        if 'cum_loss_list' not in data_storage.universal_data_storage_dict:
+            data_storage.universal_data_storage_dict['cum_loss_list'] = cum_loss_list
+            data_storage.save_universal_data_storage_dict()
 
         if config.data_type == 'django' or config.data_type == 'hs':
             logging.info('save the best model by accuracy')
