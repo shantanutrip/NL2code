@@ -3,12 +3,12 @@ device="cuda0"
 
 ## Originally the batch size was 10 and epoch size was 200 for hs
 if [ "$2" == "gColab" ]; then
-  echo "Google Colab running"
-	batch_size=10
-  max_epoch_size=10
+	echo "Google Colab running"
+  	batch_size=10
+  	max_epoch_size=10
 else
-	batch_size=5
-  max_epoch_size=10
+  	batch_size=10
+  	max_epoch_size=200
 fi
 
 echo "batch size : ${batch_size}"

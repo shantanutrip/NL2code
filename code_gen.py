@@ -222,6 +222,7 @@ if __name__ == '__main__':
             elif args.mode == 'new':
                 # we play with new examples!
                 query, str_map = canonicalize_query(cmd)
+                print 'Query :',query
                 vocab = train_data.annot_vocab
                 query_tokens = query.split(' ')
                 query_tokens_data = [query_to_data(query, vocab)]
@@ -236,7 +237,8 @@ if __name__ == '__main__':
 
             has_grammar_error = any([c for c in cand_list if c.has_grammar_error])
             print 'has_grammar_error: ', has_grammar_error
-
+            query_temp,str_m = canonicalize_query(cmd)
+            # print 'Query',query_temp
             for cid, cand in enumerate(cand_list[:5]):
                 print '*' * 60
                 print 'cand #%d, score: %f' % (cid, cand.score)
@@ -244,6 +246,8 @@ if __name__ == '__main__':
                 try:
                     ast_tree = decode_tree_to_python_ast(cand.tree)
                     code = astor.to_source(ast_tree)
+                    
+                    
                     print 'code: ', code
                     print 'decode log: ', cand.log
                 except:
