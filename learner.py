@@ -160,9 +160,12 @@ class Learner(object):
         except:
             logging.info('Number of epochs was less. No model could be saved.')
 
-        if 'cum_loss_list' not in data_storage.universal_data_storage_dict:
-            data_storage.universal_data_storage_dict['cum_loss_list'] = cum_loss_list
-            data_storage.save_universal_data_storage_dict()
+        data_storage.universal_data_storage_dict['cum_loss_list'] = cum_loss_list
+        data_storage.universal_data_storage_dict['history_valid_acc'] = history_valid_acc
+        data_storage.universal_data_storage_dict['history_valid_bleu'] = history_valid_bleu
+        data_storage.universal_data_storage_dict['history_valid_perf'] = history_valid_perf
+        data_storage.universal_data_storage_dict['cum_loss_list'] = cum_loss_list
+        data_storage.save_universal_data_storage_dict()
 
         if config.data_type == 'django' or config.data_type == 'hs':
             logging.info('save the best model by accuracy')
