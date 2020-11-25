@@ -241,6 +241,16 @@ class DataSet:
 
             assert len(exg_action_seq) > 0
 
+            ## tgt_action_seq[eid, t, 0] --> [examp0le_id, action sequence, rule_type]
+            ## Imagine a list of list. Each lelement of list is an example. Each example consists a list of rules
+            ## [
+            ##  [[1,0,0,0],
+            ##   [0,0,1,0]], (ex1)
+            ##  [[0,1,0,0],
+            ##   [0,0,1,0]]  (ex2)
+            ##  ] (ex2)
+            ## We set the target value as 1 for the rule that we expect as an output
+            ## At the same place in tgt_action_seq, we feed in the data
             for t, action in enumerate(exg_action_seq):
                 if action.act_type == APPLY_RULE:
                     rule = action.data['rule']
@@ -599,7 +609,7 @@ def check_terminals():
 
 def query_to_data(query, annot_vocab):
     query_tokens = query.split(' ')
-    token_num = min(config.max_qeury_length, len(query_tokens))
+    token_num = min(config.max_query_length, len(query_tokens))
     data = np.zeros((1, token_num), dtype='int32')
 
     for tid, token in enumerate(query_tokens[:token_num]):

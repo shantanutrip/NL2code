@@ -36,8 +36,14 @@ for i, terminal_vocab in enumerate(train_data.terminal_vocab.token_id_map):
 
 print('-' * 100) 
 for i, example in enumerate(train_data.examples):
+  print('####### Parse Tree #########')
   print(example.parse_tree)
+  print('####### Code #########')
   print(example.code)
+  print('####### Query #########')
+  print(example.query)
+  print('####### Actions #########')
+  print(example.actions)
   if i == 1:
     break
 

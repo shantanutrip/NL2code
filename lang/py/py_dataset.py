@@ -305,6 +305,7 @@ def parse_hs_dataset():
                                 can_fully_reconstructed = False
                     else:  # copy
                         if term_tok_id != terminal_vocab.unk:
+                            ## in both terminal as well as query
                             d['source_idx'] = tok_src_idx
                             action = Action(GEN_COPY_TOKEN, d)
                         else:
