@@ -1,0 +1,219 @@
+[nltk_data] Downloading package punkt to /root/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+run trained model for hs
+11/22/2020 01:01:53 [INFO] generic_utils: init logging file [runs/parser.log]
+11/22/2020 01:01:53 [INFO] code_gen: command line: code_gen.py -data_type hs -data data/hs.freq3.pre_suf.unary_closure.bin -output_dir runs -model models/model.hs_unary_closure_top20_word128_encoder256_rule128_node64.beam15.adadelta.simple_trans.8e39832.iter5600.npz -decode_max_time_step 350 -rule_embed_dim 128 -node_embed_dim 64 interactive -mode new
+11/22/2020 01:01:53 [INFO] code_gen: loading dataset [data/hs.freq3.pre_suf.unary_closure.bin]
+11/22/2020 01:01:55 [INFO] code_gen: current config: Namespace(attention_hidden_dim=50, batch_size=10, beam_size=15, clip_grad=0.0, data='data/hs.freq3.pre_suf.unary_closure.bin', data_type='hs', decode_max_time_step=350, decoder_hidden_dim=256, dropout=0.2, enable_copy=True, encoder='bilstm', encoder_hidden_dim=256, frontier_node_type_feed=True, head_nt_constraint=True, ifttt_test_split='data/ifff.test_data.gold.id', max_epoch=50, max_query_length=70, mode='new', model='models/model.hs_unary_closure_top20_word128_encoder256_rule128_node64.beam15.adadelta.simple_trans.8e39832.iter5600.npz', node_embed_dim=64, node_num=57, operation='interactive', optimizer='adam', output_dir='runs', parent_action_feed=True, parent_hidden_state_feed=True, ptrnet_hidden_dim=50, random_seed=181783, rule_embed_dim=128, rule_num=100, save_per_batch=4000, source_vocab_size=351, target_vocab_size=556, train_patience=10, tree_attention=False, valid_metric='bleu', valid_per_batch=4000, word_embed_dim=128)
+11/22/2020 01:01:55 [INFO] code_gen: avg_action_num: 141
+11/22/2020 01:01:55 [INFO] code_gen: grammar rule num.: 100
+11/22/2020 01:01:55 [INFO] code_gen: grammar node type num.: 57
+11/22/2020 01:01:55 [INFO] code_gen: source vocab size: 351
+11/22/2020 01:01:55 [INFO] code_gen: target vocab size: 556
+11/22/2020 01:01:56 [INFO] recurrent: applying dropout with p = 0.200000
+/usr/local/lib/python2.7/dist-packages/theano/gpuarray/dnn.py:184: UserWarning: Your cuDNN version is more recent than Theano. If you encounter problems, try updating Theano or downgrading cuDNN to a version >= v5 and <= v7.
+  warnings.warn("Your cuDNN version is more recent than "
+11/22/2020 01:01:58 [INFO] recurrent: applying dropout with p = 0.200000
+11/22/2020 01:01:58 [INFO] components: applying dropout with p = 0.200000
+/usr/local/lib/python2.7/dist-packages/theano/gradient.py:589: UserWarning: grad method was asked to compute the gradient with respect to a variable that is not part of the computational graph of the cost, or is used only by a non-differentiable operator: decoder_lstm_p4
+  handle_disconnected(elem)
+/usr/local/lib/python2.7/dist-packages/theano/gradient.py:589: UserWarning: grad method was asked to compute the gradient with respect to a variable that is not part of the computational graph of the cost, or is used only by a non-differentiable operator: decoder_lstm_p10
+  handle_disconnected(elem)
+/usr/local/lib/python2.7/dist-packages/theano/gradient.py:589: UserWarning: grad method was asked to compute the gradient with respect to a variable that is not part of the computational graph of the cost, or is used only by a non-differentiable operator: decoder_lstm_p16
+  handle_disconnected(elem)
+/usr/local/lib/python2.7/dist-packages/theano/gradient.py:589: UserWarning: grad method was asked to compute the gradient with respect to a variable that is not part of the computational graph of the cost, or is used only by a non-differentiable operator: decoder_lstm_p22
+  handle_disconnected(elem)
+/usr/local/lib/python2.7/dist-packages/theano/gradient.py:589: UserWarning: grad method was asked to compute the gradient with respect to a variable that is not part of the computational graph of the cost, or is used only by a non-differentiable operator: decoder_lstm_p29
+  handle_disconnected(elem)
+/usr/local/lib/python2.7/dist-packages/theano/gradient.py:589: UserWarning: grad method was asked to compute the gradient with respect to a variable that is not part of the computational graph of the cost, or is used only by a non-differentiable operator: decoder_lstm_p30
+  handle_disconnected(elem)
+/usr/local/lib/python2.7/dist-packages/theano/gradient.py:589: UserWarning: grad method was asked to compute the gradient with respect to a variable that is not part of the computational graph of the cost, or is used only by a non-differentiable operator: decoder_lstm_p31
+  handle_disconnected(elem)
+/usr/local/lib/python2.7/dist-packages/theano/gradient.py:589: UserWarning: grad method was asked to compute the gradient with respect to a variable that is not part of the computational graph of the cost, or is used only by a non-differentiable operator: decoder_lstm_p32
+  handle_disconnected(elem)
+/usr/local/lib/python2.7/dist-packages/theano/gradient.py:589: UserWarning: grad method was asked to compute the gradient with respect to a variable that is not part of the computational graph of the cost, or is used only by a non-differentiable operator: decoder_lstm_p33
+  handle_disconnected(elem)
+/usr/local/lib/python2.7/dist-packages/theano/gradient.py:615: UserWarning: grad method was asked to compute the gradient with respect to a variable that is not part of the computational graph of the cost, or is used only by a non-differentiable operator: <DisconnectedType>
+  handle_disconnected(rval[i])
+WARNING (theano.tensor.blas): We did not find a dynamic library in the library_dir of the library we use for blas. If you use ATLAS, make sure to compile it with dynamics library.
+11/22/2020 01:02:50 [WARNING] blas: We did not find a dynamic library in the library_dir of the library we use for blas. If you use ATLAS, make sure to compile it with dynamics library.
+11/22/2020 01:02:56 [INFO] model: building decoder ...
+11/22/2020 01:02:56 [INFO] recurrent: applying dropout with p = 0.200000
+11/22/2020 01:02:56 [INFO] recurrent: applying dropout with p = 0.200000
+11/22/2020 01:02:56 [INFO] components: applying dropout with p = 0.200000
+11/22/2020 01:03:00 [INFO] model: load model from [models/model.hs_unary_closure_top20_word128_encoder256_rule128_node64.beam15.adadelta.simple_trans.8e39832.iter5600.npz]
+11/22/2020 01:03:00 [INFO] model: loading parameter [query_embed_p0]
+11/22/2020 01:03:00 [INFO] model: loading parameter [query_encoder_lstm_foward_lstm_p0]
+11/22/2020 01:03:00 [INFO] model: loading parameter [query_encoder_lstm_foward_lstm_p1]
+11/22/2020 01:03:00 [INFO] model: loading parameter [query_encoder_lstm_foward_lstm_p2]
+11/22/2020 01:03:00 [INFO] model: loading parameter [query_encoder_lstm_foward_lstm_p3]
+11/22/2020 01:03:00 [INFO] model: loading parameter [query_encoder_lstm_foward_lstm_p4]
+11/22/2020 01:03:00 [INFO] model: loading parameter [query_encoder_lstm_foward_lstm_p5]
+11/22/2020 01:03:00 [INFO] model: loading parameter [query_encoder_lstm_foward_lstm_p6]
+11/22/2020 01:03:00 [INFO] model: loading parameter [query_encoder_lstm_foward_lstm_p7]
+11/22/2020 01:03:00 [INFO] model: loading parameter [query_encoder_lstm_foward_lstm_p8]
+11/22/2020 01:03:00 [INFO] model: loading parameter [query_encoder_lstm_foward_lstm_p9]
+11/22/2020 01:03:00 [INFO] model: loading parameter [query_encoder_lstm_foward_lstm_p10]
+11/22/2020 01:03:00 [INFO] model: loading parameter [query_encoder_lstm_foward_lstm_p11]
+11/22/2020 01:03:00 [INFO] model: loading parameter [query_encoder_lstm_backward_lstm_p0]
+11/22/2020 01:03:00 [INFO] model: loading parameter [query_encoder_lstm_backward_lstm_p1]
+11/22/2020 01:03:00 [INFO] model: loading parameter [query_encoder_lstm_backward_lstm_p2]
+11/22/2020 01:03:00 [INFO] model: loading parameter [query_encoder_lstm_backward_lstm_p3]
+11/22/2020 01:03:00 [INFO] model: loading parameter [query_encoder_lstm_backward_lstm_p4]
+11/22/2020 01:03:00 [INFO] model: loading parameter [query_encoder_lstm_backward_lstm_p5]
+11/22/2020 01:03:00 [INFO] model: loading parameter [query_encoder_lstm_backward_lstm_p6]
+11/22/2020 01:03:00 [INFO] model: loading parameter [query_encoder_lstm_backward_lstm_p7]
+11/22/2020 01:03:00 [INFO] model: loading parameter [query_encoder_lstm_backward_lstm_p8]
+11/22/2020 01:03:00 [INFO] model: loading parameter [query_encoder_lstm_backward_lstm_p9]
+11/22/2020 01:03:00 [INFO] model: loading parameter [query_encoder_lstm_backward_lstm_p10]
+11/22/2020 01:03:00 [INFO] model: loading parameter [query_encoder_lstm_backward_lstm_p11]
+11/22/2020 01:03:00 [INFO] model: loading parameter [decoder_lstm_p0]
+11/22/2020 01:03:00 [INFO] model: loading parameter [decoder_lstm_p1]
+11/22/2020 01:03:00 [INFO] model: loading parameter [decoder_lstm_p2]
+11/22/2020 01:03:00 [INFO] model: loading parameter [decoder_lstm_p3]
+11/22/2020 01:03:00 [INFO] model: loading parameter [decoder_lstm_p4]
+11/22/2020 01:03:00 [INFO] model: loading parameter [decoder_lstm_p5]
+11/22/2020 01:03:00 [INFO] model: loading parameter [decoder_lstm_p6]
+11/22/2020 01:03:00 [INFO] model: loading parameter [decoder_lstm_p7]
+11/22/2020 01:03:00 [INFO] model: loading parameter [decoder_lstm_p8]
+11/22/2020 01:03:00 [INFO] model: loading parameter [decoder_lstm_p9]
+11/22/2020 01:03:00 [INFO] model: loading parameter [decoder_lstm_p10]
+11/22/2020 01:03:00 [INFO] model: loading parameter [decoder_lstm_p11]
+11/22/2020 01:03:00 [INFO] model: loading parameter [decoder_lstm_p12]
+11/22/2020 01:03:00 [INFO] model: loading parameter [decoder_lstm_p13]
+11/22/2020 01:03:00 [INFO] model: loading parameter [decoder_lstm_p14]
+11/22/2020 01:03:00 [INFO] model: loading parameter [decoder_lstm_p15]
+11/22/2020 01:03:00 [INFO] model: loading parameter [decoder_lstm_p16]
+11/22/2020 01:03:00 [INFO] model: loading parameter [decoder_lstm_p17]
+11/22/2020 01:03:00 [INFO] model: loading parameter [decoder_lstm_p18]
+11/22/2020 01:03:00 [INFO] model: loading parameter [decoder_lstm_p19]
+11/22/2020 01:03:00 [INFO] model: loading parameter [decoder_lstm_p20]
+11/22/2020 01:03:00 [INFO] model: loading parameter [decoder_lstm_p21]
+11/22/2020 01:03:00 [INFO] model: loading parameter [decoder_lstm_p22]
+11/22/2020 01:03:00 [INFO] model: loading parameter [decoder_lstm_p23]
+11/22/2020 01:03:00 [INFO] model: loading parameter [decoder_lstm_p24]
+11/22/2020 01:03:00 [INFO] model: loading parameter [decoder_lstm_p25]
+11/22/2020 01:03:00 [INFO] model: loading parameter [decoder_lstm_p26]
+11/22/2020 01:03:00 [INFO] model: loading parameter [decoder_lstm_p27]
+11/22/2020 01:03:00 [INFO] model: loading parameter [decoder_lstm_p28]
+11/22/2020 01:03:00 [INFO] model: loading parameter [decoder_lstm_p29]
+11/22/2020 01:03:00 [INFO] model: loading parameter [decoder_lstm_p30]
+11/22/2020 01:03:00 [INFO] model: loading parameter [decoder_lstm_p31]
+11/22/2020 01:03:00 [INFO] model: loading parameter [decoder_lstm_p32]
+11/22/2020 01:03:00 [INFO] model: loading parameter [decoder_lstm_p33]
+11/22/2020 01:03:00 [INFO] model: loading parameter [PointerNet_Dense1_input_W]
+11/22/2020 01:03:00 [INFO] model: loading parameter [PointerNet_Dense1_input_b]
+11/22/2020 01:03:00 [INFO] model: loading parameter [PointerNet_Dense1_h_W]
+11/22/2020 01:03:00 [INFO] model: loading parameter [PointerNet_Dense1_h_b]
+11/22/2020 01:03:00 [INFO] model: loading parameter [PointerNet_Dense2_W]
+11/22/2020 01:03:00 [INFO] model: loading parameter [PointerNet_Dense2_b]
+11/22/2020 01:03:00 [INFO] model: loading parameter [terminal_gen_softmax_W]
+11/22/2020 01:03:00 [INFO] model: loading parameter [terminal_gen_softmax_b]
+11/22/2020 01:03:00 [INFO] model: loading parameter [rule_embedding_W]
+11/22/2020 01:03:00 [INFO] model: loading parameter [rule_embedding_b]
+11/22/2020 01:03:00 [INFO] model: loading parameter [node_embed]
+11/22/2020 01:03:00 [INFO] model: loading parameter [vocab_embedding_W]
+11/22/2020 01:03:00 [INFO] model: loading parameter [vocab_embedding_b]
+11/22/2020 01:03:00 [INFO] model: loading parameter [decoder_hidden_state_W_rule_W]
+11/22/2020 01:03:01 [INFO] model: loading parameter [decoder_hidden_state_W_rule_b]
+11/22/2020 01:03:01 [INFO] model: loading parameter [decoder_hidden_state_W_token_W]
+11/22/2020 01:03:01 [INFO] model: loading parameter [decoder_hidden_state_W_token_b]
+example id or query: NAME_BEGIN Acidic Swamp Ooze NAME_END ATK_BEGIN 3 ATK_END DEF_BEGIN 2 DEF_END COST_BEGIN 2 COST_END DUR_BEGIN -1 DUR_END TYPE_BEGIN Minion TYPE_END PLAYER_CLS_BEGIN Neutral PLAYER_CLS_END RACE_BEGIN NIL RACE_END RARITY_BEGIN Common RARITY_END DESC_BEGIN Battlecry : Destroy your opponent 's weapon . DESC_END
+Query : NAME_BEGIN Acidic Swamp Ooze NAME_END ATK_BEGIN 3 ATK_END DEF_BEGIN 2 DEF_END COST_BEGIN 2 COST_END DUR_BEGIN -1 DUR_END TYPE_BEGIN Minion TYPE_END PLAYER_CLS_BEGIN Neutral PLAYER_CLS_END RACE_BEGIN NIL RACE_END RARITY_BEGIN Common RARITY_END DESC_BEGIN Battlecry : Destroy your opponent 's weapon . DESC_END
+/usr/local/lib/python2.7/dist-packages/theano/tensor/subtensor.py:2197: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
+  rval = inputs[0].__getitem__(inputs[1:])
+has_grammar_error:  False
+************************************************************
+cand #0, score: -0.032798
+code:  class AcidicSwampOoze(MinionCard):
+
+    def __init__(self):
+        super().__init__('Acidic Swamp Ooze', 2, CHARACTER_CLASS.ALL,
+            CARD_RARITY.COMMON, battlecry=Battlecry(Destroy(),
+            WeaponSelector(EnemyPlayer())))
+
+    def create_minion(self, player):
+        return Minion(3, 2)
+
+decode log:   || (str{name}{val=Acidic}){copy[Acidic][p=0.999987]} || (str{name}{val=AcidicSwamp}){copy[Swamp][p=0.996071]} || (str{name}{val=AcidicSwampOoze}){copy[Ooze][p=0.999702]} || (str{expr$->$(Str)@Str$->$(str{s})}{val=Acidic}){copy[Acidic][p=0.999993]} || (str{expr$->$(Str)@Str$->$(str{s})}{val=Acidic Swamp}){copy[Swamp][p=0.999997]} || (str{expr$->$(Str)@Str$->$(str{s})}{val=Acidic Swamp Ooze}){copy[Ooze][p=0.999999]} || (int{expr$->$(Num)@Num$->$(int{n})}{val=2}){copy[2][p=1.000000]} || (str{expr$->$(Name)@Name$->$(str{id})}{val=Destroy}){copy[Destroy][p=0.999938]} || (int{expr$->$(Num)@Num$->$(int{n})}{val=3}){copy[3][p=1.000000]} || (int{expr$->$(Num)@Num$->$(int{n})}{val=2}){copy[2][p=1.000000]}
+* parse tree *
+(root (ClassDef (str{name}{val=AcidicSwampOoze}) (expr*{bases} (expr (Name (str{id}{val=MinionCard})))) (stmt*{body} (stmt (FunctionDef (str{name}{val=__init__}) (arguments{args} (arguments (expr*{args} (expr (Name (str{id}{val=self})))))) (stmt*{body} (stmt (Expr (expr{value} (Call (expr{func} (Attribute (expr{value} (Call (expr{func} (Name (str{id}{val=super}))))) (str{attr}{val=__init__}))) (expr*{args} (expr (Str (str{s}{val=Acidic Swamp Ooze}))) (expr (Num (int{n}{val=2}))) (expr (Attribute (expr{value} (Name (str{id}{val=CHARACTER_CLASS}))) (str{attr}{val=ALL}))) (expr (Attribute (expr{value} (Name (str{id}{val=CARD_RARITY}))) (str{attr}{val=COMMON})))) (keyword*{keywords} (keyword (str{arg}{val=battlecry}) (expr{value} (Call (expr{func} (Name (str{id}{val=Battlecry}))) (expr*{args} (expr (Call (expr{func} (Name (str{id}{val=Destroy}))))) (expr (Call (expr{func} (Name (str{id}{val=WeaponSelector}))) (expr*{args} (expr (Call (expr{func} (Name (str{id}{val=EnemyPlayer})))))))))))))))))))) (stmt (FunctionDef (str{name}{val=create_minion}) (arguments{args} (arguments (expr*{args} (expr (Name (str{id}{val=self}))) (expr (Name (str{id}{val=player})))))) (stmt*{body} (stmt (Return (expr{value} (Call (expr{func} (Name (str{id}{val=Minion}))) (expr*{args} (expr (Num (int{n}{val=3}))) (expr (Num (int{n}{val=2}))))))))))))))
+n_timestep: 108
+ast size: 101
+************************************************************
+************************************************************
+cand #1, score: -5.413551
+code:  class AcidicSwampOoze(MinionCard):
+
+    def __init__(self):
+        super().__init__('Acidic Swamp', 2, CHARACTER_CLASS.ALL,
+            CARD_RARITY.COMMON, battlecry=Battlecry(Destroy(),
+            WeaponSelector(EnemyPlayer())))
+
+    def create_minion(self, player):
+        return Minion(3, 2)
+
+decode log:   || (str{name}{val=Acidic}){copy[Acidic][p=0.999987]} || (str{name}{val=AcidicSwamp}){copy[Swamp][p=0.996071]} || (str{name}{val=AcidicSwampOoze}){copy[Ooze][p=0.999702]} || (str{expr$->$(Str)@Str$->$(str{s})}{val=Acidic}){copy[Acidic][p=0.999993]} || (str{expr$->$(Str)@Str$->$(str{s})}{val=Acidic Swamp}){copy[Swamp][p=0.999997]} || (int{expr$->$(Num)@Num$->$(int{n})}{val=2}){copy[2][p=1.000000]} || (str{expr$->$(Name)@Name$->$(str{id})}{val=Destroy}){copy[Destroy][p=0.999938]} || (int{expr$->$(Num)@Num$->$(int{n})}{val=3}){copy[3][p=1.000000]} || (int{expr$->$(Num)@Num$->$(int{n})}{val=2}){copy[2][p=1.000000]}
+* parse tree *
+(root (ClassDef (str{name}{val=AcidicSwampOoze}) (expr*{bases} (expr (Name (str{id}{val=MinionCard})))) (stmt*{body} (stmt (FunctionDef (str{name}{val=__init__}) (arguments{args} (arguments (expr*{args} (expr (Name (str{id}{val=self})))))) (stmt*{body} (stmt (Expr (expr{value} (Call (expr{func} (Attribute (expr{value} (Call (expr{func} (Name (str{id}{val=super}))))) (str{attr}{val=__init__}))) (expr*{args} (expr (Str (str{s}{val=Acidic Swamp}))) (expr (Num (int{n}{val=2}))) (expr (Attribute (expr{value} (Name (str{id}{val=CHARACTER_CLASS}))) (str{attr}{val=ALL}))) (expr (Attribute (expr{value} (Name (str{id}{val=CARD_RARITY}))) (str{attr}{val=COMMON})))) (keyword*{keywords} (keyword (str{arg}{val=battlecry}) (expr{value} (Call (expr{func} (Name (str{id}{val=Battlecry}))) (expr*{args} (expr (Call (expr{func} (Name (str{id}{val=Destroy}))))) (expr (Call (expr{func} (Name (str{id}{val=WeaponSelector}))) (expr*{args} (expr (Call (expr{func} (Name (str{id}{val=EnemyPlayer})))))))))))))))))))) (stmt (FunctionDef (str{name}{val=create_minion}) (arguments{args} (arguments (expr*{args} (expr (Name (str{id}{val=self}))) (expr (Name (str{id}{val=player})))))) (stmt*{body} (stmt (Return (expr{value} (Call (expr{func} (Name (str{id}{val=Minion}))) (expr*{args} (expr (Num (int{n}{val=3}))) (expr (Num (int{n}{val=2}))))))))))))))
+n_timestep: 106
+ast size: 101
+************************************************************
+************************************************************
+cand #2, score: -6.906216
+code:  class AcidicSwampOoze(MinionCard):
+
+    def __init__(self):
+        super().__init__('Acidic Swamp Ooze', 2, CHARACTER_CLASS.ALL,
+            CARD_RARITY.COMMON, battlecry=Battlecry(Destroy(),
+            PlayerSelector(EnemyPlayer())))
+
+    def create_minion(self, player):
+        return Minion(3, 2)
+
+decode log:   || (str{name}{val=Acidic}){copy[Acidic][p=0.999987]} || (str{name}{val=AcidicSwamp}){copy[Swamp][p=0.996071]} || (str{name}{val=AcidicSwampOoze}){copy[Ooze][p=0.999702]} || (str{expr$->$(Str)@Str$->$(str{s})}{val=Acidic}){copy[Acidic][p=0.999993]} || (str{expr$->$(Str)@Str$->$(str{s})}{val=Acidic Swamp}){copy[Swamp][p=0.999997]} || (str{expr$->$(Str)@Str$->$(str{s})}{val=Acidic Swamp Ooze}){copy[Ooze][p=0.999999]} || (int{expr$->$(Num)@Num$->$(int{n})}{val=2}){copy[2][p=1.000000]} || (str{expr$->$(Name)@Name$->$(str{id})}{val=Destroy}){copy[Destroy][p=0.999938]} || (int{expr$->$(Num)@Num$->$(int{n})}{val=3}){copy[3][p=1.000000]} || (int{expr$->$(Num)@Num$->$(int{n})}{val=2}){copy[2][p=1.000000]}
+* parse tree *
+(root (ClassDef (str{name}{val=AcidicSwampOoze}) (expr*{bases} (expr (Name (str{id}{val=MinionCard})))) (stmt*{body} (stmt (FunctionDef (str{name}{val=__init__}) (arguments{args} (arguments (expr*{args} (expr (Name (str{id}{val=self})))))) (stmt*{body} (stmt (Expr (expr{value} (Call (expr{func} (Attribute (expr{value} (Call (expr{func} (Name (str{id}{val=super}))))) (str{attr}{val=__init__}))) (expr*{args} (expr (Str (str{s}{val=Acidic Swamp Ooze}))) (expr (Num (int{n}{val=2}))) (expr (Attribute (expr{value} (Name (str{id}{val=CHARACTER_CLASS}))) (str{attr}{val=ALL}))) (expr (Attribute (expr{value} (Name (str{id}{val=CARD_RARITY}))) (str{attr}{val=COMMON})))) (keyword*{keywords} (keyword (str{arg}{val=battlecry}) (expr{value} (Call (expr{func} (Name (str{id}{val=Battlecry}))) (expr*{args} (expr (Call (expr{func} (Name (str{id}{val=Destroy}))))) (expr (Call (expr{func} (Name (str{id}{val=PlayerSelector}))) (expr*{args} (expr (Call (expr{func} (Name (str{id}{val=EnemyPlayer})))))))))))))))))))) (stmt (FunctionDef (str{name}{val=create_minion}) (arguments{args} (arguments (expr*{args} (expr (Name (str{id}{val=self}))) (expr (Name (str{id}{val=player})))))) (stmt*{body} (stmt (Return (expr{value} (Call (expr{func} (Name (str{id}{val=Minion}))) (expr*{args} (expr (Num (int{n}{val=3}))) (expr (Num (int{n}{val=2}))))))))))))))
+n_timestep: 108
+ast size: 101
+************************************************************
+************************************************************
+cand #3, score: -7.681250
+code:  class AcidicSwampOoze(MinionCard):
+
+    def __init__(self):
+        super().__init__('Acidic Swamp Ooze', 2, CHARACTER_CLASS.ALL,
+            CARD_RARITY.COMMON, battlecry=Battlecry(Destroy(), HeroSelector
+            (EnemyPlayer())))
+
+    def create_minion(self, player):
+        return Minion(3, 2)
+
+decode log:   || (str{name}{val=Acidic}){copy[Acidic][p=0.999987]} || (str{name}{val=AcidicSwamp}){copy[Swamp][p=0.996071]} || (str{name}{val=AcidicSwampOoze}){copy[Ooze][p=0.999702]} || (str{expr$->$(Str)@Str$->$(str{s})}{val=Acidic}){copy[Acidic][p=0.999993]} || (str{expr$->$(Str)@Str$->$(str{s})}{val=Acidic Swamp}){copy[Swamp][p=0.999997]} || (str{expr$->$(Str)@Str$->$(str{s})}{val=Acidic Swamp Ooze}){copy[Ooze][p=0.999999]} || (int{expr$->$(Num)@Num$->$(int{n})}{val=2}){copy[2][p=1.000000]} || (str{expr$->$(Name)@Name$->$(str{id})}{val=Destroy}){copy[Destroy][p=0.999938]} || (int{expr$->$(Num)@Num$->$(int{n})}{val=3}){copy[3][p=1.000000]} || (int{expr$->$(Num)@Num$->$(int{n})}{val=2}){copy[2][p=1.000000]}
+* parse tree *
+(root (ClassDef (str{name}{val=AcidicSwampOoze}) (expr*{bases} (expr (Name (str{id}{val=MinionCard})))) (stmt*{body} (stmt (FunctionDef (str{name}{val=__init__}) (arguments{args} (arguments (expr*{args} (expr (Name (str{id}{val=self})))))) (stmt*{body} (stmt (Expr (expr{value} (Call (expr{func} (Attribute (expr{value} (Call (expr{func} (Name (str{id}{val=super}))))) (str{attr}{val=__init__}))) (expr*{args} (expr (Str (str{s}{val=Acidic Swamp Ooze}))) (expr (Num (int{n}{val=2}))) (expr (Attribute (expr{value} (Name (str{id}{val=CHARACTER_CLASS}))) (str{attr}{val=ALL}))) (expr (Attribute (expr{value} (Name (str{id}{val=CARD_RARITY}))) (str{attr}{val=COMMON})))) (keyword*{keywords} (keyword (str{arg}{val=battlecry}) (expr{value} (Call (expr{func} (Name (str{id}{val=Battlecry}))) (expr*{args} (expr (Call (expr{func} (Name (str{id}{val=Destroy}))))) (expr (Call (expr{func} (Name (str{id}{val=HeroSelector}))) (expr*{args} (expr (Call (expr{func} (Name (str{id}{val=EnemyPlayer})))))))))))))))))))) (stmt (FunctionDef (str{name}{val=create_minion}) (arguments{args} (arguments (expr*{args} (expr (Name (str{id}{val=self}))) (expr (Name (str{id}{val=player})))))) (stmt*{body} (stmt (Return (expr{value} (Call (expr{func} (Name (str{id}{val=Minion}))) (expr*{args} (expr (Num (int{n}{val=3}))) (expr (Num (int{n}{val=2}))))))))))))))
+n_timestep: 108
+ast size: 101
+************************************************************
+************************************************************
+cand #4, score: -8.296304
+code:  class AcidicSwampOoze(MinionCard):
+
+    def __init__(self):
+        super().__init__('Acidic Swamp Ooze', 2, CHARACTER_CLASS.ALL,
+            CARD_RARITY.COMMON, battlecry=Battlecry(Destroy(),
+            WeaponSelector(EnemyEnemyPlayer())))
+
+    def create_minion(self, player):
+        return Minion(3, 2)
+
+decode log:   || (str{name}{val=Acidic}){copy[Acidic][p=0.999987]} || (str{name}{val=AcidicSwamp}){copy[Swamp][p=0.996071]} || (str{name}{val=AcidicSwampOoze}){copy[Ooze][p=0.999702]} || (str{expr$->$(Str)@Str$->$(str{s})}{val=Acidic}){copy[Acidic][p=0.999993]} || (str{expr$->$(Str)@Str$->$(str{s})}{val=Acidic Swamp}){copy[Swamp][p=0.999997]} || (str{expr$->$(Str)@Str$->$(str{s})}{val=Acidic Swamp Ooze}){copy[Ooze][p=0.999999]} || (int{expr$->$(Num)@Num$->$(int{n})}{val=2}){copy[2][p=1.000000]} || (str{expr$->$(Name)@Name$->$(str{id})}{val=Destroy}){copy[Destroy][p=0.999938]} || (int{expr$->$(Num)@Num$->$(int{n})}{val=3}){copy[3][p=1.000000]} || (int{expr$->$(Num)@Num$->$(int{n})}{val=2}){copy[2][p=1.000000]}
+* parse tree *
+(root (ClassDef (str{name}{val=AcidicSwampOoze}) (expr*{bases} (expr (Name (str{id}{val=MinionCard})))) (stmt*{body} (stmt (FunctionDef (str{name}{val=__init__}) (arguments{args} (arguments (expr*{args} (expr (Name (str{id}{val=self})))))) (stmt*{body} (stmt (Expr (expr{value} (Call (expr{func} (Attribute (expr{value} (Call (expr{func} (Name (str{id}{val=super}))))) (str{attr}{val=__init__}))) (expr*{args} (expr (Str (str{s}{val=Acidic Swamp Ooze}))) (expr (Num (int{n}{val=2}))) (expr (Attribute (expr{value} (Name (str{id}{val=CHARACTER_CLASS}))) (str{attr}{val=ALL}))) (expr (Attribute (expr{value} (Name (str{id}{val=CARD_RARITY}))) (str{attr}{val=COMMON})))) (keyword*{keywords} (keyword (str{arg}{val=battlecry}) (expr{value} (Call (expr{func} (Name (str{id}{val=Battlecry}))) (expr*{args} (expr (Call (expr{func} (Name (str{id}{val=Destroy}))))) (expr (Call (expr{func} (Name (str{id}{val=WeaponSelector}))) (expr*{args} (expr (Call (expr{func} (Name (str{id}{val=EnemyEnemyPlayer})))))))))))))))))))) (stmt (FunctionDef (str{name}{val=create_minion}) (arguments{args} (arguments (expr*{args} (expr (Name (str{id}{val=self}))) (expr (Name (str{id}{val=player})))))) (stmt*{body} (stmt (Return (expr{value} (Call (expr{func} (Name (str{id}{val=Minion}))) (expr*{args} (expr (Num (int{n}{val=3}))) (expr (Num (int{n}{val=2}))))))))))))))
+n_timestep: 109
+ast size: 101
+************************************************************
+example id or query: Traceback (most recent call last):
+  File "code_gen.py", line 214, in <module>
+    cmd = raw_input('example id or query: ')
+KeyboardInterrupt

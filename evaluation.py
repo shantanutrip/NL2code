@@ -11,7 +11,8 @@ from nn.utils.generic_utils import init_logging
 from model import *
 
 
-DJANGO_ANNOT_FILE = '/Users/yinpengcheng/Research/SemanticParsing/CodeGeneration/en-django/all.anno'
+# DJANGO_ANNOT_FILE = '/Users/yinpengcheng/Research/SemanticParsing/CodeGeneration/en-django/all.anno'
+DJANGO_ANNOT_FILE = '/all.anno'
 
 
 def tokenize_for_bleu_eval(code):
