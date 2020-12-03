@@ -2,6 +2,7 @@ output="runs"
 device="cuda0"
 
 ## Originally the batch size was 10 and epoch size was 200 for hs
+## Originally the batch size was 10, epoch size was 50, valid_per_batch and save_per_batch were 4000 each for django
 if [ "$2" == "gColab" ]; then
 	echo "Google Colab running"
   	batch_size=10
@@ -24,7 +25,7 @@ else
 	# django dataset
 	echo "training django dataset"
 	dataset="django.cleaned.dataset.freq5.par_info.refact.space_only.bin"
-	commandline="-batch_size 10 -max_epoch 50 -valid_per_batch 4000 -save_per_batch 4000 -decode_max_time_step 100 -optimizer adam -rule_embed_dim 128 -node_embed_dim 64 -valid_metric bleu"
+	commandline="-batch_size 10 -max_epoch 200 -valid_per_batch 2500 -save_per_batch 2500 -decode_max_time_step 100 -optimizer adam -rule_embed_dim 128 -node_embed_dim 64 -valid_metric bleu"
 	datatype="django"
 fi
 

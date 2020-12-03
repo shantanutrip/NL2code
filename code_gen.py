@@ -126,6 +126,11 @@ if __name__ == '__main__':
 
     logging.info('loading dataset [%s]', args.data)
     train_data, dev_data, test_data = deserialize_from_file(args.data)
+    if 'django' in args.data_type:
+        train_data.truncate_after(indx=5000)
+    # train_data.select_random_elems(count=10000)
+    logging.info('loaded dataset [%s]', args.data_type)
+    logging.info('Length of train data: %d', len(train_data.examples))
 
     if not args.source_vocab_size:
         args.source_vocab_size = train_data.annot_vocab.size

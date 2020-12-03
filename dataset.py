@@ -10,6 +10,7 @@ import string
 import re
 import astor
 from itertools import chain
+import random
 
 from nn.utils.io_utils import serialize_to_file, deserialize_from_file
 
@@ -164,6 +165,23 @@ class DataSet:
         self.examples = []
         self.data_matrix = dict()
         self.grammar = grammar
+    
+    def truncate_after(self, indx=16000):
+        if indx > len(self.examples):
+            return 
+        self.examples = self.examples[0:indx]
+        for k in self.data_matrix:
+            self.data_matrix[k] = self.data_matrix[k][0:indx]
+    
+    ##Throws error as of now. Try changing the value of entry.idx to numbers from 0 to 5000
+    def select_random_elems(self, count=16000):
+        if count >= len(self.examples):
+            return
+        indices = random.sample(range(0, len(self.examples)), count)
+        indices.sort()
+        self.examples = [self.examples[i] for i in indices]
+        for k in self.data_matrix:
+            self.data_matrix[k] = [self.data_matrix[k][i] for i in indices]
 
     def add(self, example):
         example.eid = len(self.examples)
