@@ -1,3 +1,4 @@
+# open('/content/NL2code/all.anno')
 from nn.utils.generic_utils import init_logging
 from nn.utils.io_utils import deserialize_from_file, serialize_to_file
 print('Hi')

@@ -12,20 +12,28 @@ else
   	max_epoch_size=200
 fi
 
-echo "batch size : ${batch_size}"
-echo "max epoch size : ${max_epoch_size}"
 
 if [ "$1" == "hs" ]; then
 	# hs dataset
 	echo "training hs dataset"
+	echo "batch size : ${batch_size}"
+	echo "max epoch size : ${max_epoch_size}"
 	dataset="hs.freq3.pre_suf.unary_closure.bin"
 	commandline="-batch_size ${batch_size} -max_epoch ${max_epoch_size} -valid_per_batch 280 -save_per_batch 280 -decode_max_time_step 350 -optimizer adadelta -rule_embed_dim 128 -node_embed_dim 64 -valid_metric bleu"
 	datatype="hs"
 else
 	# django dataset
+	batch_size=10
+	max_epoch_size=2
+	valid_per_batch_val=500
+	save_per_batch_val=500
 	echo "training django dataset"
+	echo "batch size : ${batch_size}"
+	echo "max epoch size : ${max_epoch_size}"
+	echo "valid_per_batch_val : ${valid_per_batch_val}"
+	echo "save_per_batch_val : ${save_per_batch_val}"
 	dataset="django.cleaned.dataset.freq5.par_info.refact.space_only.bin"
-	commandline="-batch_size 10 -max_epoch 200 -valid_per_batch 2500 -save_per_batch 2500 -decode_max_time_step 100 -optimizer adam -rule_embed_dim 128 -node_embed_dim 64 -valid_metric bleu"
+	commandline="-batch_size ${batch_size} -max_epoch ${max_epoch_size} -valid_per_batch ${valid_per_batch_val} -save_per_batch ${save_per_batch_val} -decode_max_time_step 100 -optimizer adam -rule_embed_dim 128 -node_embed_dim 64 -valid_metric bleu"
 	datatype="django"
 fi
 
